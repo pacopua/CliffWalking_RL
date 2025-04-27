@@ -1,0 +1,6 @@
+Cosas a estudiar del ModelBased:
+-NUM_EPISODES
+-GAMMA (Factor de descuento)
+-SEÑAL DE RECOMPENSA 
+	+Tenemos la señal de recompensa por defecto, debemos probar alternativas a esta para ver cual es la mejor
+-NUMERO DE TRAYECTORIAS (pasos random) para el MODEL BASED
