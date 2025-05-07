@@ -1,19 +1,19 @@
 # Declaración de constantes
 
 # Número máximo de pasos por episodio
-T_MAX = 90
+T_MAX = 150
 
 # Número de episodios para la prueba
 # (repeticiones)
 NUM_EPISODES = 30
 
 #factor de descuento:
-GAMMA = 0.95
+GAMMA = 0.975
 #cada paso -1, caer por el agujero -100, llegar al final +0
 
 #como de buena es la recompensa
 #si la recompensa es mayor que este umbral, se considera que ha convergido 
-REWARD_THRESHOLD = -30
+REWARD_THRESHOLD = -70
 
 import gymnasium as gym
 import seaborn as sns
@@ -21,6 +21,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np
 import collections
+import csv 
 
 env = gym.make('CliffWalking-v0', is_slippery = True)
 
@@ -48,8 +49,8 @@ def draw_rewards(rewards):
 
     plt.show()
 
-#esta funcion comprueba todos los episodios (repeticiones) y para cada episodio el numero de iteraciones (t)
-def check_improvements():
+#esta funcion comprueba todos los episodios (repeticiones) y para cada episodio el numero de iteraciones (t, que son los pasos)
+def check_improvements(agent):
     reward_test = 0.0
     for i in range(NUM_EPISODES):
         total_reward = 0.0
@@ -78,7 +79,7 @@ def train(agent):
         max_diffs.append(max_diff)
         print("After value iteration, max_diff = " + str(max_diff))
         t += 1
-        reward_test = check_improvements()
+        reward_test = check_improvements(agent)
         rewards.append(reward_test)
                
         if best_reward is None or reward_test > best_reward:
@@ -115,9 +116,6 @@ class DirectEstimationAgent:
             self.rewards[(self.state, action, new_state)] = reward
             self.transits[(self.state, action)][new_state] += 1
             if is_done:
-                if new_state == 47:
-                    self.rewards[(self.state, action, new_state)] = 10
-                #self.rewards[(self.state, action, new_state)] = 
                 self.state, _ = self.env.reset() 
             else: 
                 self.state = new_state
@@ -199,10 +197,11 @@ def print_policy(policy):
          print(f"Error reshaping policy: {e}")
          print("Policy array:", policy_arrows)
 
-def inspect_policy():
+def inspect_policy(agent):
     is_done = False
     rewards = []
     for n_ep in range(NUM_EPISODES):
+        print("episodio: ", n_ep)
         state, _ = env.reset()
         #print('Episode: ', n_ep)
         total_reward = 0
@@ -240,21 +239,42 @@ def print_learned_model(agent):
                 reward = agent.rewards.get((state, action, s_next), 0)
                 print(f"    → State {s_next}: Prob={prob:.2f}, Reward={reward}")
                 
-print(env.unwrapped.P)
-agent = DirectEstimationAgent(env, gamma=GAMMA, num_trajectories = 1000000)
-train(agent)
-print_learned_model(agent)
-agent.policy()
-inspect_policy()
 
-new_env = gym.make('CliffWalking-v0', render_mode = "human", is_slippery = True)
 
-state, _ = new_env.reset()
-new_env.render()
-is_done = False
-t = 0
-while not is_done:
-   action = agent.select_action(state)
-   state, reward, is_done, truncated, _ = new_env.step(action)
-   new_env.render()
-   t += 1
+def main():
+
+    #print(env.unwrapped.P)
+    
+    #for i in range(5):
+    #    csv_file = f"cliffwalking_.csv"
+
+    agent = DirectEstimationAgent(env, gamma=GAMMA, num_trajectories = 10000)
+    
+    train(agent)
+    print_learned_model(agent)
+    print("1")
+
+    agent.policy()
+
+    print("2")
+    inspect_policy(agent)
+
+    print("vamos a enseñar agente!")
+    new_env = gym.make('CliffWalking-v0', render_mode = "human", is_slippery = True)
+
+    state, _ = new_env.reset()
+    new_env.render()
+    is_done = False
+    suma_rec = 0
+    t = 0
+    while not is_done:
+        action = agent.select_action(state)
+        state, reward, is_done, truncated, _ = new_env.step(action)
+        suma_rec += reward
+        new_env.render()
+        t += 1
+
+    print("Valor final: ", suma_rec)
+
+if __name__ == "__main__":
+    main()
