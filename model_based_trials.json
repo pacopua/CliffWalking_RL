@@ -1,0 +1,1946 @@
+[
+  {
+    "algorithm": "model_based",
+    "gamma": 0.9,
+    "num_trayectorias": 1000,
+    "finish_reward": 100,
+    "fall_reward": -100,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.99,
+    "num_trayectorias": 100000,
+    "finish_reward": 100,
+    "fall_reward": -1000,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.95,
+    "num_trayectorias": 10000,
+    "finish_reward": 0,
+    "fall_reward": -1000,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.95,
+    "num_trayectorias": 100000,
+    "finish_reward": 10,
+    "fall_reward": -100,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.99,
+    "num_trayectorias": 10000,
+    "finish_reward": 10,
+    "fall_reward": -1000,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.9,
+    "num_trayectorias": 100000,
+    "finish_reward": 100,
+    "fall_reward": -1000,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.95,
+    "num_trayectorias": 10000,
+    "finish_reward": 10,
+    "fall_reward": -100,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.9,
+    "num_trayectorias": 100000,
+    "finish_reward": 0,
+    "fall_reward": -100,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.99,
+    "num_trayectorias": 1000,
+    "finish_reward": 0,
+    "fall_reward": -100,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.99,
+    "num_trayectorias": 1000,
+    "finish_reward": 100,
+    "fall_reward": -10,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.99,
+    "num_trayectorias": 10000,
+    "finish_reward": 10,
+    "fall_reward": -100,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.9,
+    "num_trayectorias": 100000,
+    "finish_reward": 100,
+    "fall_reward": -10,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.99,
+    "num_trayectorias": 100000,
+    "finish_reward": 0,
+    "fall_reward": -100,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.9,
+    "num_trayectorias": 10000,
+    "finish_reward": 0,
+    "fall_reward": -1000,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.95,
+    "num_trayectorias": 1000,
+    "finish_reward": 10,
+    "fall_reward": -100,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.9,
+    "num_trayectorias": 10000,
+    "finish_reward": 10,
+    "fall_reward": -10,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.95,
+    "num_trayectorias": 1000,
+    "finish_reward": 100,
+    "fall_reward": -100,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.99,
+    "num_trayectorias": 1000,
+    "finish_reward": 0,
+    "fall_reward": -10,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.99,
+    "num_trayectorias": 100000,
+    "finish_reward": 10,
+    "fall_reward": -100,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.95,
+    "num_trayectorias": 10000,
+    "finish_reward": 0,
+    "fall_reward": -1000,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.9,
+    "num_trayectorias": 1000,
+    "finish_reward": 10,
+    "fall_reward": -10,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.95,
+    "num_trayectorias": 1000,
+    "finish_reward": 10,
+    "fall_reward": -1000,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.9,
+    "num_trayectorias": 10000,
+    "finish_reward": 100,
+    "fall_reward": -1000,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.99,
+    "num_trayectorias": 100000,
+    "finish_reward": 0,
+    "fall_reward": -10,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.99,
+    "num_trayectorias": 10000,
+    "finish_reward": 100,
+    "fall_reward": -10,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.9,
+    "num_trayectorias": 100000,
+    "finish_reward": 0,
+    "fall_reward": -100,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.9,
+    "num_trayectorias": 1000,
+    "finish_reward": 100,
+    "fall_reward": -1000,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.99,
+    "num_trayectorias": 100000,
+    "finish_reward": 100,
+    "fall_reward": -10,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.9,
+    "num_trayectorias": 100000,
+    "finish_reward": 100,
+    "fall_reward": -1000,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.9,
+    "num_trayectorias": 10000,
+    "finish_reward": 0,
+    "fall_reward": -1000,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.95,
+    "num_trayectorias": 10000,
+    "finish_reward": 10,
+    "fall_reward": -10,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.95,
+    "num_trayectorias": 1000,
+    "finish_reward": 100,
+    "fall_reward": -100,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.99,
+    "num_trayectorias": 10000,
+    "finish_reward": 10,
+    "fall_reward": -100,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.9,
+    "num_trayectorias": 100000,
+    "finish_reward": 10,
+    "fall_reward": -100,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.95,
+    "num_trayectorias": 10000,
+    "finish_reward": 0,
+    "fall_reward": -100,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.95,
+    "num_trayectorias": 100000,
+    "finish_reward": 100,
+    "fall_reward": -100,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.9,
+    "num_trayectorias": 100000,
+    "finish_reward": 0,
+    "fall_reward": -1000,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.9,
+    "num_trayectorias": 1000,
+    "finish_reward": 0,
+    "fall_reward": -100,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.99,
+    "num_trayectorias": 100000,
+    "finish_reward": 100,
+    "fall_reward": -1000,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.99,
+    "num_trayectorias": 10000,
+    "finish_reward": 100,
+    "fall_reward": -1000,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.99,
+    "num_trayectorias": 1000,
+    "finish_reward": 0,
+    "fall_reward": -10,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.99,
+    "num_trayectorias": 10000,
+    "finish_reward": 100,
+    "fall_reward": -100,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.99,
+    "num_trayectorias": 100000,
+    "finish_reward": 0,
+    "fall_reward": -10,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.99,
+    "num_trayectorias": 1000,
+    "finish_reward": 10,
+    "fall_reward": -1000,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.9,
+    "num_trayectorias": 1000,
+    "finish_reward": 0,
+    "fall_reward": -1000,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.95,
+    "num_trayectorias": 1000,
+    "finish_reward": 100,
+    "fall_reward": -1000,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.9,
+    "num_trayectorias": 100000,
+    "finish_reward": 100,
+    "fall_reward": -100,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.95,
+    "num_trayectorias": 1000,
+    "finish_reward": 0,
+    "fall_reward": -1000,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.9,
+    "num_trayectorias": 10000,
+    "finish_reward": 100,
+    "fall_reward": -10,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.95,
+    "num_trayectorias": 1000,
+    "finish_reward": 100,
+    "fall_reward": -1000,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.95,
+    "num_trayectorias": 10000,
+    "finish_reward": 10,
+    "fall_reward": -100,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.99,
+    "num_trayectorias": 1000,
+    "finish_reward": 10,
+    "fall_reward": -10,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.9,
+    "num_trayectorias": 10000,
+    "finish_reward": 100,
+    "fall_reward": -10,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.95,
+    "num_trayectorias": 100000,
+    "finish_reward": 10,
+    "fall_reward": -10,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.95,
+    "num_trayectorias": 100000,
+    "finish_reward": 100,
+    "fall_reward": -1000,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.9,
+    "num_trayectorias": 10000,
+    "finish_reward": 10,
+    "fall_reward": -100,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.95,
+    "num_trayectorias": 100000,
+    "finish_reward": 10,
+    "fall_reward": -100,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.99,
+    "num_trayectorias": 1000,
+    "finish_reward": 100,
+    "fall_reward": -100,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.99,
+    "num_trayectorias": 10000,
+    "finish_reward": 10,
+    "fall_reward": -1000,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.9,
+    "num_trayectorias": 1000,
+    "finish_reward": 100,
+    "fall_reward": -100,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.95,
+    "num_trayectorias": 10000,
+    "finish_reward": 0,
+    "fall_reward": -100,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.95,
+    "num_trayectorias": 10000,
+    "finish_reward": 10,
+    "fall_reward": -1000,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.9,
+    "num_trayectorias": 1000,
+    "finish_reward": 0,
+    "fall_reward": -1000,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.99,
+    "num_trayectorias": 1000,
+    "finish_reward": 0,
+    "fall_reward": -100,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.95,
+    "num_trayectorias": 100000,
+    "finish_reward": 0,
+    "fall_reward": -100,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.9,
+    "num_trayectorias": 1000,
+    "finish_reward": 0,
+    "fall_reward": -100,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.9,
+    "num_trayectorias": 10000,
+    "finish_reward": 0,
+    "fall_reward": -100,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.95,
+    "num_trayectorias": 10000,
+    "finish_reward": 10,
+    "fall_reward": -100,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.99,
+    "num_trayectorias": 100000,
+    "finish_reward": 0,
+    "fall_reward": -100,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.95,
+    "num_trayectorias": 10000,
+    "finish_reward": 10,
+    "fall_reward": -10,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.99,
+    "num_trayectorias": 100000,
+    "finish_reward": 0,
+    "fall_reward": -1000,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.95,
+    "num_trayectorias": 100000,
+    "finish_reward": 0,
+    "fall_reward": -100,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.95,
+    "num_trayectorias": 1000,
+    "finish_reward": 0,
+    "fall_reward": -10,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.99,
+    "num_trayectorias": 10000,
+    "finish_reward": 10,
+    "fall_reward": -10,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.99,
+    "num_trayectorias": 1000,
+    "finish_reward": 0,
+    "fall_reward": -1000,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.9,
+    "num_trayectorias": 100000,
+    "finish_reward": 10,
+    "fall_reward": -1000,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.95,
+    "num_trayectorias": 10000,
+    "finish_reward": 10,
+    "fall_reward": -1000,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.99,
+    "num_trayectorias": 10000,
+    "finish_reward": 100,
+    "fall_reward": -1000,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.99,
+    "num_trayectorias": 100000,
+    "finish_reward": 10,
+    "fall_reward": -10,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.99,
+    "num_trayectorias": 100000,
+    "finish_reward": 0,
+    "fall_reward": -10,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.99,
+    "num_trayectorias": 10000,
+    "finish_reward": 0,
+    "fall_reward": -10,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.95,
+    "num_trayectorias": 100000,
+    "finish_reward": 10,
+    "fall_reward": -100,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.95,
+    "num_trayectorias": 100000,
+    "finish_reward": 0,
+    "fall_reward": -1000,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.9,
+    "num_trayectorias": 1000,
+    "finish_reward": 10,
+    "fall_reward": -100,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.95,
+    "num_trayectorias": 10000,
+    "finish_reward": 100,
+    "fall_reward": -1000,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.95,
+    "num_trayectorias": 100000,
+    "finish_reward": 10,
+    "fall_reward": -10,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.99,
+    "num_trayectorias": 100000,
+    "finish_reward": 100,
+    "fall_reward": -100,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.99,
+    "num_trayectorias": 10000,
+    "finish_reward": 10,
+    "fall_reward": -10,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.99,
+    "num_trayectorias": 100000,
+    "finish_reward": 10,
+    "fall_reward": -100,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.9,
+    "num_trayectorias": 10000,
+    "finish_reward": 100,
+    "fall_reward": -100,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.9,
+    "num_trayectorias": 1000,
+    "finish_reward": 100,
+    "fall_reward": -1000,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.95,
+    "num_trayectorias": 10000,
+    "finish_reward": 100,
+    "fall_reward": -10,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.99,
+    "num_trayectorias": 10000,
+    "finish_reward": 100,
+    "fall_reward": -100,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.9,
+    "num_trayectorias": 100000,
+    "finish_reward": 100,
+    "fall_reward": -10,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.99,
+    "num_trayectorias": 100000,
+    "finish_reward": 10,
+    "fall_reward": -1000,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.99,
+    "num_trayectorias": 100000,
+    "finish_reward": 100,
+    "fall_reward": -10,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.99,
+    "num_trayectorias": 100000,
+    "finish_reward": 10,
+    "fall_reward": -10,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.95,
+    "num_trayectorias": 100000,
+    "finish_reward": 10,
+    "fall_reward": -1000,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.95,
+    "num_trayectorias": 1000,
+    "finish_reward": 0,
+    "fall_reward": -1000,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.9,
+    "num_trayectorias": 1000,
+    "finish_reward": 10,
+    "fall_reward": -1000,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.99,
+    "num_trayectorias": 100000,
+    "finish_reward": 100,
+    "fall_reward": -1000,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.95,
+    "num_trayectorias": 100000,
+    "finish_reward": 10,
+    "fall_reward": -1000,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.9,
+    "num_trayectorias": 10000,
+    "finish_reward": 0,
+    "fall_reward": -10,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.95,
+    "num_trayectorias": 10000,
+    "finish_reward": 0,
+    "fall_reward": -1000,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.9,
+    "num_trayectorias": 1000,
+    "finish_reward": 10,
+    "fall_reward": -1000,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.99,
+    "num_trayectorias": 1000,
+    "finish_reward": 0,
+    "fall_reward": -1000,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.95,
+    "num_trayectorias": 100000,
+    "finish_reward": 0,
+    "fall_reward": -1000,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.9,
+    "num_trayectorias": 1000,
+    "finish_reward": 100,
+    "fall_reward": -10,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.9,
+    "num_trayectorias": 100000,
+    "finish_reward": 100,
+    "fall_reward": -100,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.9,
+    "num_trayectorias": 1000,
+    "finish_reward": 100,
+    "fall_reward": -10,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.95,
+    "num_trayectorias": 1000,
+    "finish_reward": 10,
+    "fall_reward": -100,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.99,
+    "num_trayectorias": 10000,
+    "finish_reward": 10,
+    "fall_reward": -10,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.99,
+    "num_trayectorias": 100000,
+    "finish_reward": 0,
+    "fall_reward": -1000,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.95,
+    "num_trayectorias": 1000,
+    "finish_reward": 100,
+    "fall_reward": -10,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.95,
+    "num_trayectorias": 10000,
+    "finish_reward": 100,
+    "fall_reward": -100,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.95,
+    "num_trayectorias": 10000,
+    "finish_reward": 0,
+    "fall_reward": -10,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.95,
+    "num_trayectorias": 10000,
+    "finish_reward": 100,
+    "fall_reward": -1000,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.99,
+    "num_trayectorias": 100000,
+    "finish_reward": 0,
+    "fall_reward": -100,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.9,
+    "num_trayectorias": 1000,
+    "finish_reward": 10,
+    "fall_reward": -10,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.99,
+    "num_trayectorias": 1000,
+    "finish_reward": 10,
+    "fall_reward": -100,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.9,
+    "num_trayectorias": 100000,
+    "finish_reward": 10,
+    "fall_reward": -10,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.9,
+    "num_trayectorias": 10000,
+    "finish_reward": 100,
+    "fall_reward": -10,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.95,
+    "num_trayectorias": 100000,
+    "finish_reward": 0,
+    "fall_reward": -100,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.95,
+    "num_trayectorias": 10000,
+    "finish_reward": 10,
+    "fall_reward": -1000,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.9,
+    "num_trayectorias": 100000,
+    "finish_reward": 0,
+    "fall_reward": -10,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.95,
+    "num_trayectorias": 1000,
+    "finish_reward": 0,
+    "fall_reward": -10,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.99,
+    "num_trayectorias": 10000,
+    "finish_reward": 0,
+    "fall_reward": -1000,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.99,
+    "num_trayectorias": 100000,
+    "finish_reward": 100,
+    "fall_reward": -100,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.9,
+    "num_trayectorias": 10000,
+    "finish_reward": 0,
+    "fall_reward": -100,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.95,
+    "num_trayectorias": 1000,
+    "finish_reward": 10,
+    "fall_reward": -1000,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.99,
+    "num_trayectorias": 10000,
+    "finish_reward": 0,
+    "fall_reward": -100,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.95,
+    "num_trayectorias": 1000,
+    "finish_reward": 10,
+    "fall_reward": -100,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.9,
+    "num_trayectorias": 10000,
+    "finish_reward": 10,
+    "fall_reward": -10,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.9,
+    "num_trayectorias": 1000,
+    "finish_reward": 0,
+    "fall_reward": -1000,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.95,
+    "num_trayectorias": 1000,
+    "finish_reward": 10,
+    "fall_reward": -10,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.9,
+    "num_trayectorias": 100000,
+    "finish_reward": 0,
+    "fall_reward": -100,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.95,
+    "num_trayectorias": 10000,
+    "finish_reward": 10,
+    "fall_reward": -10,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.95,
+    "num_trayectorias": 10000,
+    "finish_reward": 100,
+    "fall_reward": -100,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.95,
+    "num_trayectorias": 100000,
+    "finish_reward": 0,
+    "fall_reward": -10,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.95,
+    "num_trayectorias": 100000,
+    "finish_reward": 0,
+    "fall_reward": -10,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.95,
+    "num_trayectorias": 10000,
+    "finish_reward": 0,
+    "fall_reward": -10,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.95,
+    "num_trayectorias": 100000,
+    "finish_reward": 0,
+    "fall_reward": -10,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.95,
+    "num_trayectorias": 100000,
+    "finish_reward": 100,
+    "fall_reward": -10,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.99,
+    "num_trayectorias": 1000,
+    "finish_reward": 100,
+    "fall_reward": -100,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.99,
+    "num_trayectorias": 1000,
+    "finish_reward": 100,
+    "fall_reward": -100,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.9,
+    "num_trayectorias": 100000,
+    "finish_reward": 10,
+    "fall_reward": -1000,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.99,
+    "num_trayectorias": 10000,
+    "finish_reward": 100,
+    "fall_reward": -100,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.99,
+    "num_trayectorias": 1000,
+    "finish_reward": 100,
+    "fall_reward": -10,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.9,
+    "num_trayectorias": 100000,
+    "finish_reward": 0,
+    "fall_reward": -10,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.99,
+    "num_trayectorias": 10000,
+    "finish_reward": 100,
+    "fall_reward": -10,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.95,
+    "num_trayectorias": 10000,
+    "finish_reward": 100,
+    "fall_reward": -100,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.99,
+    "num_trayectorias": 100000,
+    "finish_reward": 10,
+    "fall_reward": -1000,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.9,
+    "num_trayectorias": 1000,
+    "finish_reward": 10,
+    "fall_reward": -10,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.9,
+    "num_trayectorias": 10000,
+    "finish_reward": 0,
+    "fall_reward": -1000,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.99,
+    "num_trayectorias": 1000,
+    "finish_reward": 0,
+    "fall_reward": -1000,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.99,
+    "num_trayectorias": 1000,
+    "finish_reward": 10,
+    "fall_reward": -1000,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.9,
+    "num_trayectorias": 1000,
+    "finish_reward": 100,
+    "fall_reward": -100,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.95,
+    "num_trayectorias": 100000,
+    "finish_reward": 100,
+    "fall_reward": -10,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.9,
+    "num_trayectorias": 100000,
+    "finish_reward": 10,
+    "fall_reward": -10,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.9,
+    "num_trayectorias": 100000,
+    "finish_reward": 10,
+    "fall_reward": -100,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.9,
+    "num_trayectorias": 100000,
+    "finish_reward": 10,
+    "fall_reward": -1000,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.95,
+    "num_trayectorias": 100000,
+    "finish_reward": 100,
+    "fall_reward": -1000,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.99,
+    "num_trayectorias": 1000,
+    "finish_reward": 10,
+    "fall_reward": -1000,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.9,
+    "num_trayectorias": 10000,
+    "finish_reward": 100,
+    "fall_reward": -1000,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.99,
+    "num_trayectorias": 100000,
+    "finish_reward": 10,
+    "fall_reward": -100,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.95,
+    "num_trayectorias": 100000,
+    "finish_reward": 100,
+    "fall_reward": -10,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.99,
+    "num_trayectorias": 100000,
+    "finish_reward": 100,
+    "fall_reward": -10,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.99,
+    "num_trayectorias": 10000,
+    "finish_reward": 0,
+    "fall_reward": -1000,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.99,
+    "num_trayectorias": 100000,
+    "finish_reward": 0,
+    "fall_reward": -1000,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.95,
+    "num_trayectorias": 10000,
+    "finish_reward": 100,
+    "fall_reward": -10,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.99,
+    "num_trayectorias": 10000,
+    "finish_reward": 10,
+    "fall_reward": -100,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.95,
+    "num_trayectorias": 1000,
+    "finish_reward": 100,
+    "fall_reward": -10,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.9,
+    "num_trayectorias": 10000,
+    "finish_reward": 0,
+    "fall_reward": -10,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.9,
+    "num_trayectorias": 1000,
+    "finish_reward": 10,
+    "fall_reward": -100,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.9,
+    "num_trayectorias": 1000,
+    "finish_reward": 100,
+    "fall_reward": -1000,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.95,
+    "num_trayectorias": 100000,
+    "finish_reward": 100,
+    "fall_reward": -100,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.95,
+    "num_trayectorias": 10000,
+    "finish_reward": 0,
+    "fall_reward": -100,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.95,
+    "num_trayectorias": 1000,
+    "finish_reward": 10,
+    "fall_reward": -10,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.95,
+    "num_trayectorias": 10000,
+    "finish_reward": 0,
+    "fall_reward": -10,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.99,
+    "num_trayectorias": 1000,
+    "finish_reward": 10,
+    "fall_reward": -100,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.99,
+    "num_trayectorias": 1000,
+    "finish_reward": 0,
+    "fall_reward": -100,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.9,
+    "num_trayectorias": 100000,
+    "finish_reward": 100,
+    "fall_reward": -1000,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.99,
+    "num_trayectorias": 1000,
+    "finish_reward": 10,
+    "fall_reward": -10,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.9,
+    "num_trayectorias": 1000,
+    "finish_reward": 0,
+    "fall_reward": -10,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.9,
+    "num_trayectorias": 1000,
+    "finish_reward": 10,
+    "fall_reward": -1000,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.99,
+    "num_trayectorias": 10000,
+    "finish_reward": 0,
+    "fall_reward": -100,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.95,
+    "num_trayectorias": 1000,
+    "finish_reward": 100,
+    "fall_reward": -1000,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.95,
+    "num_trayectorias": 10000,
+    "finish_reward": 100,
+    "fall_reward": -10,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.95,
+    "num_trayectorias": 10000,
+    "finish_reward": 100,
+    "fall_reward": -1000,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.99,
+    "num_trayectorias": 10000,
+    "finish_reward": 0,
+    "fall_reward": -100,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.95,
+    "num_trayectorias": 100000,
+    "finish_reward": 100,
+    "fall_reward": -1000,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.9,
+    "num_trayectorias": 10000,
+    "finish_reward": 0,
+    "fall_reward": -100,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.9,
+    "num_trayectorias": 1000,
+    "finish_reward": 0,
+    "fall_reward": -10,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.9,
+    "num_trayectorias": 1000,
+    "finish_reward": 0,
+    "fall_reward": -10,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.95,
+    "num_trayectorias": 1000,
+    "finish_reward": 10,
+    "fall_reward": -10,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.95,
+    "num_trayectorias": 1000,
+    "finish_reward": 100,
+    "fall_reward": -100,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.9,
+    "num_trayectorias": 10000,
+    "finish_reward": 100,
+    "fall_reward": -1000,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.95,
+    "num_trayectorias": 100000,
+    "finish_reward": 10,
+    "fall_reward": -1000,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.9,
+    "num_trayectorias": 100000,
+    "finish_reward": 100,
+    "fall_reward": -100,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.99,
+    "num_trayectorias": 1000,
+    "finish_reward": 0,
+    "fall_reward": -10,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.99,
+    "num_trayectorias": 1000,
+    "finish_reward": 10,
+    "fall_reward": -10,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.95,
+    "num_trayectorias": 1000,
+    "finish_reward": 10,
+    "fall_reward": -1000,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.99,
+    "num_trayectorias": 10000,
+    "finish_reward": 0,
+    "fall_reward": -10,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.9,
+    "num_trayectorias": 100000,
+    "finish_reward": 0,
+    "fall_reward": -1000,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.99,
+    "num_trayectorias": 100000,
+    "finish_reward": 100,
+    "fall_reward": -100,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.9,
+    "num_trayectorias": 100000,
+    "finish_reward": 0,
+    "fall_reward": -1000,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.99,
+    "num_trayectorias": 10000,
+    "finish_reward": 10,
+    "fall_reward": -1000,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.95,
+    "num_trayectorias": 1000,
+    "finish_reward": 0,
+    "fall_reward": -100,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.9,
+    "num_trayectorias": 10000,
+    "finish_reward": 10,
+    "fall_reward": -100,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.99,
+    "num_trayectorias": 100000,
+    "finish_reward": 10,
+    "fall_reward": -1000,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.9,
+    "num_trayectorias": 10000,
+    "finish_reward": 10,
+    "fall_reward": -1000,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.99,
+    "num_trayectorias": 10000,
+    "finish_reward": 0,
+    "fall_reward": -1000,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.9,
+    "num_trayectorias": 10000,
+    "finish_reward": 10,
+    "fall_reward": -100,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.9,
+    "num_trayectorias": 10000,
+    "finish_reward": 10,
+    "fall_reward": -1000,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.95,
+    "num_trayectorias": 1000,
+    "finish_reward": 0,
+    "fall_reward": -1000,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.9,
+    "num_trayectorias": 100000,
+    "finish_reward": 0,
+    "fall_reward": -10,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.95,
+    "num_trayectorias": 1000,
+    "finish_reward": 100,
+    "fall_reward": -10,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.9,
+    "num_trayectorias": 10000,
+    "finish_reward": 100,
+    "fall_reward": -100,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.95,
+    "num_trayectorias": 100000,
+    "finish_reward": 100,
+    "fall_reward": -100,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.95,
+    "num_trayectorias": 1000,
+    "finish_reward": 0,
+    "fall_reward": -100,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.99,
+    "num_trayectorias": 10000,
+    "finish_reward": 0,
+    "fall_reward": -10,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.9,
+    "num_trayectorias": 10000,
+    "finish_reward": 10,
+    "fall_reward": -1000,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.95,
+    "num_trayectorias": 1000,
+    "finish_reward": 0,
+    "fall_reward": -10,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.9,
+    "num_trayectorias": 1000,
+    "finish_reward": 0,
+    "fall_reward": -100,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.99,
+    "num_trayectorias": 10000,
+    "finish_reward": 100,
+    "fall_reward": -10,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.99,
+    "num_trayectorias": 1000,
+    "finish_reward": 100,
+    "fall_reward": -1000,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.95,
+    "num_trayectorias": 100000,
+    "finish_reward": 10,
+    "fall_reward": -10,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.9,
+    "num_trayectorias": 100000,
+    "finish_reward": 10,
+    "fall_reward": -100,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.9,
+    "num_trayectorias": 10000,
+    "finish_reward": 10,
+    "fall_reward": -10,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.99,
+    "num_trayectorias": 1000,
+    "finish_reward": 10,
+    "fall_reward": -100,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.9,
+    "num_trayectorias": 1000,
+    "finish_reward": 10,
+    "fall_reward": -100,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.99,
+    "num_trayectorias": 1000,
+    "finish_reward": 100,
+    "fall_reward": -10,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.9,
+    "num_trayectorias": 100000,
+    "finish_reward": 10,
+    "fall_reward": -10,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.9,
+    "num_trayectorias": 10000,
+    "finish_reward": 0,
+    "fall_reward": -10,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.9,
+    "num_trayectorias": 100000,
+    "finish_reward": 100,
+    "fall_reward": -10,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.99,
+    "num_trayectorias": 1000,
+    "finish_reward": 100,
+    "fall_reward": -1000,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.99,
+    "num_trayectorias": 1000,
+    "finish_reward": 100,
+    "fall_reward": -1000,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.99,
+    "num_trayectorias": 100000,
+    "finish_reward": 10,
+    "fall_reward": -10,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.99,
+    "num_trayectorias": 10000,
+    "finish_reward": 100,
+    "fall_reward": -1000,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.95,
+    "num_trayectorias": 1000,
+    "finish_reward": 0,
+    "fall_reward": -100,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.9,
+    "num_trayectorias": 10000,
+    "finish_reward": 100,
+    "fall_reward": -100,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.9,
+    "num_trayectorias": 1000,
+    "finish_reward": 100,
+    "fall_reward": -10,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "model_based",
+    "gamma": 0.95,
+    "num_trayectorias": 100000,
+    "finish_reward": 0,
+    "fall_reward": -1000,
+    "step_reward": -1
+  }
+]

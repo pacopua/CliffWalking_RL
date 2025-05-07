@@ -1,0 +1,2594 @@
+[
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.9,
+    "convergencia": 1,
+    "finish_reward": 100,
+    "fall_reward": -1000,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.99,
+    "convergencia": 1e-06,
+    "finish_reward": 10,
+    "fall_reward": -10,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.99,
+    "convergencia": 0.0001,
+    "finish_reward": 0,
+    "fall_reward": -10,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.9,
+    "convergencia": 0.0001,
+    "finish_reward": 10,
+    "fall_reward": -10,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.95,
+    "convergencia": 0.01,
+    "finish_reward": 10,
+    "fall_reward": -1000,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.9,
+    "convergencia": 0.0001,
+    "finish_reward": 10,
+    "fall_reward": -10,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.99,
+    "convergencia": 0.01,
+    "finish_reward": 0,
+    "fall_reward": -1000,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.99,
+    "convergencia": 1e-06,
+    "finish_reward": 0,
+    "fall_reward": -100,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.99,
+    "convergencia": 0.01,
+    "finish_reward": 100,
+    "fall_reward": -100,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.9,
+    "convergencia": 0.0001,
+    "finish_reward": 0,
+    "fall_reward": -100,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.95,
+    "convergencia": 1,
+    "finish_reward": 100,
+    "fall_reward": -1000,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.99,
+    "convergencia": 1e-06,
+    "finish_reward": 10,
+    "fall_reward": -1000,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.99,
+    "convergencia": 1e-06,
+    "finish_reward": 0,
+    "fall_reward": -1000,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.9,
+    "convergencia": 0.0001,
+    "finish_reward": 10,
+    "fall_reward": -100,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.99,
+    "convergencia": 0.01,
+    "finish_reward": 0,
+    "fall_reward": -100,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.99,
+    "convergencia": 0.0001,
+    "finish_reward": 0,
+    "fall_reward": -10,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.9,
+    "convergencia": 1e-06,
+    "finish_reward": 0,
+    "fall_reward": -1000,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.9,
+    "convergencia": 1,
+    "finish_reward": 10,
+    "fall_reward": -100,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.99,
+    "convergencia": 1,
+    "finish_reward": 100,
+    "fall_reward": -1000,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.95,
+    "convergencia": 1e-06,
+    "finish_reward": 0,
+    "fall_reward": -10,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.9,
+    "convergencia": 0.0001,
+    "finish_reward": 0,
+    "fall_reward": -10,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.99,
+    "convergencia": 1,
+    "finish_reward": 10,
+    "fall_reward": -100,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.9,
+    "convergencia": 1e-06,
+    "finish_reward": 100,
+    "fall_reward": -10,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.95,
+    "convergencia": 1e-06,
+    "finish_reward": 100,
+    "fall_reward": -10,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.99,
+    "convergencia": 1e-06,
+    "finish_reward": 100,
+    "fall_reward": -10,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.95,
+    "convergencia": 1e-06,
+    "finish_reward": 10,
+    "fall_reward": -10,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.9,
+    "convergencia": 1,
+    "finish_reward": 0,
+    "fall_reward": -1000,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.9,
+    "convergencia": 0.01,
+    "finish_reward": 10,
+    "fall_reward": -1000,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.9,
+    "convergencia": 0.01,
+    "finish_reward": 100,
+    "fall_reward": -100,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.95,
+    "convergencia": 0.01,
+    "finish_reward": 10,
+    "fall_reward": -10,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.9,
+    "convergencia": 1,
+    "finish_reward": 100,
+    "fall_reward": -100,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.9,
+    "convergencia": 1e-06,
+    "finish_reward": 10,
+    "fall_reward": -100,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.9,
+    "convergencia": 0.01,
+    "finish_reward": 0,
+    "fall_reward": -1000,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.9,
+    "convergencia": 0.0001,
+    "finish_reward": 0,
+    "fall_reward": -1000,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.9,
+    "convergencia": 1e-06,
+    "finish_reward": 10,
+    "fall_reward": -100,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.9,
+    "convergencia": 0.01,
+    "finish_reward": 100,
+    "fall_reward": -10,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.95,
+    "convergencia": 0.0001,
+    "finish_reward": 10,
+    "fall_reward": -100,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.95,
+    "convergencia": 0.01,
+    "finish_reward": 100,
+    "fall_reward": -100,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.9,
+    "convergencia": 0.0001,
+    "finish_reward": 100,
+    "fall_reward": -10,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.95,
+    "convergencia": 0.0001,
+    "finish_reward": 100,
+    "fall_reward": -1000,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.95,
+    "convergencia": 0.0001,
+    "finish_reward": 0,
+    "fall_reward": -100,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.99,
+    "convergencia": 1e-06,
+    "finish_reward": 10,
+    "fall_reward": -100,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.99,
+    "convergencia": 0.0001,
+    "finish_reward": 10,
+    "fall_reward": -1000,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.9,
+    "convergencia": 0.0001,
+    "finish_reward": 100,
+    "fall_reward": -100,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.99,
+    "convergencia": 1,
+    "finish_reward": 10,
+    "fall_reward": -100,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.95,
+    "convergencia": 0.0001,
+    "finish_reward": 10,
+    "fall_reward": -1000,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.9,
+    "convergencia": 0.0001,
+    "finish_reward": 0,
+    "fall_reward": -1000,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.95,
+    "convergencia": 1e-06,
+    "finish_reward": 0,
+    "fall_reward": -100,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.9,
+    "convergencia": 1,
+    "finish_reward": 0,
+    "fall_reward": -10,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.9,
+    "convergencia": 1e-06,
+    "finish_reward": 10,
+    "fall_reward": -100,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.99,
+    "convergencia": 0.0001,
+    "finish_reward": 10,
+    "fall_reward": -10,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.9,
+    "convergencia": 1,
+    "finish_reward": 0,
+    "fall_reward": -1000,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.9,
+    "convergencia": 1,
+    "finish_reward": 10,
+    "fall_reward": -1000,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.9,
+    "convergencia": 0.01,
+    "finish_reward": 10,
+    "fall_reward": -10,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.95,
+    "convergencia": 0.01,
+    "finish_reward": 100,
+    "fall_reward": -1000,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.9,
+    "convergencia": 1e-06,
+    "finish_reward": 100,
+    "fall_reward": -10,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.95,
+    "convergencia": 0.01,
+    "finish_reward": 100,
+    "fall_reward": -10,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.99,
+    "convergencia": 1,
+    "finish_reward": 100,
+    "fall_reward": -10,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.95,
+    "convergencia": 0.01,
+    "finish_reward": 0,
+    "fall_reward": -1000,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.99,
+    "convergencia": 0.01,
+    "finish_reward": 100,
+    "fall_reward": -100,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.99,
+    "convergencia": 0.0001,
+    "finish_reward": 0,
+    "fall_reward": -100,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.9,
+    "convergencia": 0.01,
+    "finish_reward": 0,
+    "fall_reward": -100,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.9,
+    "convergencia": 0.01,
+    "finish_reward": 0,
+    "fall_reward": -10,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.99,
+    "convergencia": 1e-06,
+    "finish_reward": 10,
+    "fall_reward": -1000,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.99,
+    "convergencia": 0.0001,
+    "finish_reward": 10,
+    "fall_reward": -100,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.9,
+    "convergencia": 1e-06,
+    "finish_reward": 10,
+    "fall_reward": -10,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.9,
+    "convergencia": 1,
+    "finish_reward": 100,
+    "fall_reward": -10,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.9,
+    "convergencia": 0.01,
+    "finish_reward": 100,
+    "fall_reward": -100,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.95,
+    "convergencia": 1,
+    "finish_reward": 10,
+    "fall_reward": -10,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.95,
+    "convergencia": 0.01,
+    "finish_reward": 10,
+    "fall_reward": -10,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.99,
+    "convergencia": 0.01,
+    "finish_reward": 100,
+    "fall_reward": -1000,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.95,
+    "convergencia": 1,
+    "finish_reward": 10,
+    "fall_reward": -100,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.95,
+    "convergencia": 1e-06,
+    "finish_reward": 10,
+    "fall_reward": -100,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.95,
+    "convergencia": 1e-06,
+    "finish_reward": 100,
+    "fall_reward": -100,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.95,
+    "convergencia": 0.0001,
+    "finish_reward": 10,
+    "fall_reward": -10,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.9,
+    "convergencia": 0.01,
+    "finish_reward": 10,
+    "fall_reward": -10,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.95,
+    "convergencia": 0.01,
+    "finish_reward": 0,
+    "fall_reward": -10,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.95,
+    "convergencia": 1e-06,
+    "finish_reward": 10,
+    "fall_reward": -1000,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.95,
+    "convergencia": 0.01,
+    "finish_reward": 100,
+    "fall_reward": -1000,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.9,
+    "convergencia": 0.01,
+    "finish_reward": 0,
+    "fall_reward": -1000,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.95,
+    "convergencia": 0.01,
+    "finish_reward": 10,
+    "fall_reward": -1000,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.9,
+    "convergencia": 1e-06,
+    "finish_reward": 0,
+    "fall_reward": -100,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.95,
+    "convergencia": 0.0001,
+    "finish_reward": 100,
+    "fall_reward": -100,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.99,
+    "convergencia": 0.01,
+    "finish_reward": 0,
+    "fall_reward": -10,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.99,
+    "convergencia": 1,
+    "finish_reward": 100,
+    "fall_reward": -10,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.9,
+    "convergencia": 0.0001,
+    "finish_reward": 0,
+    "fall_reward": -10,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.99,
+    "convergencia": 0.0001,
+    "finish_reward": 0,
+    "fall_reward": -10,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.95,
+    "convergencia": 1e-06,
+    "finish_reward": 100,
+    "fall_reward": -100,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.95,
+    "convergencia": 0.0001,
+    "finish_reward": 100,
+    "fall_reward": -10,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.95,
+    "convergencia": 1,
+    "finish_reward": 100,
+    "fall_reward": -1000,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.99,
+    "convergencia": 0.0001,
+    "finish_reward": 0,
+    "fall_reward": -1000,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.9,
+    "convergencia": 1,
+    "finish_reward": 0,
+    "fall_reward": -10,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.95,
+    "convergencia": 0.0001,
+    "finish_reward": 10,
+    "fall_reward": -10,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.99,
+    "convergencia": 1e-06,
+    "finish_reward": 0,
+    "fall_reward": -1000,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.95,
+    "convergencia": 1e-06,
+    "finish_reward": 10,
+    "fall_reward": -10,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.9,
+    "convergencia": 0.0001,
+    "finish_reward": 10,
+    "fall_reward": -10,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.99,
+    "convergencia": 1e-06,
+    "finish_reward": 100,
+    "fall_reward": -10,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.95,
+    "convergencia": 1,
+    "finish_reward": 10,
+    "fall_reward": -1000,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.99,
+    "convergencia": 0.0001,
+    "finish_reward": 0,
+    "fall_reward": -1000,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.99,
+    "convergencia": 0.0001,
+    "finish_reward": 100,
+    "fall_reward": -100,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.95,
+    "convergencia": 0.01,
+    "finish_reward": 10,
+    "fall_reward": -100,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.99,
+    "convergencia": 1,
+    "finish_reward": 10,
+    "fall_reward": -10,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.99,
+    "convergencia": 0.01,
+    "finish_reward": 10,
+    "fall_reward": -10,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.9,
+    "convergencia": 1,
+    "finish_reward": 100,
+    "fall_reward": -10,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.99,
+    "convergencia": 1e-06,
+    "finish_reward": 100,
+    "fall_reward": -100,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.99,
+    "convergencia": 0.0001,
+    "finish_reward": 100,
+    "fall_reward": -1000,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.9,
+    "convergencia": 1,
+    "finish_reward": 100,
+    "fall_reward": -10,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.99,
+    "convergencia": 1,
+    "finish_reward": 100,
+    "fall_reward": -100,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.99,
+    "convergencia": 0.01,
+    "finish_reward": 10,
+    "fall_reward": -10,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.99,
+    "convergencia": 0.01,
+    "finish_reward": 100,
+    "fall_reward": -1000,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.95,
+    "convergencia": 1e-06,
+    "finish_reward": 0,
+    "fall_reward": -10,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.99,
+    "convergencia": 1e-06,
+    "finish_reward": 10,
+    "fall_reward": -1000,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.99,
+    "convergencia": 1e-06,
+    "finish_reward": 100,
+    "fall_reward": -1000,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.99,
+    "convergencia": 0.0001,
+    "finish_reward": 10,
+    "fall_reward": -1000,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.9,
+    "convergencia": 1e-06,
+    "finish_reward": 0,
+    "fall_reward": -10,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.99,
+    "convergencia": 0.01,
+    "finish_reward": 0,
+    "fall_reward": -100,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.99,
+    "convergencia": 0.0001,
+    "finish_reward": 10,
+    "fall_reward": -1000,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.95,
+    "convergencia": 0.01,
+    "finish_reward": 100,
+    "fall_reward": -1000,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.99,
+    "convergencia": 0.01,
+    "finish_reward": 10,
+    "fall_reward": -100,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.95,
+    "convergencia": 0.01,
+    "finish_reward": 100,
+    "fall_reward": -10,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.9,
+    "convergencia": 0.01,
+    "finish_reward": 10,
+    "fall_reward": -10,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.95,
+    "convergencia": 0.0001,
+    "finish_reward": 100,
+    "fall_reward": -100,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.99,
+    "convergencia": 0.0001,
+    "finish_reward": 10,
+    "fall_reward": -10,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.99,
+    "convergencia": 1e-06,
+    "finish_reward": 100,
+    "fall_reward": -100,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.99,
+    "convergencia": 1e-06,
+    "finish_reward": 10,
+    "fall_reward": -100,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.9,
+    "convergencia": 1e-06,
+    "finish_reward": 100,
+    "fall_reward": -1000,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.99,
+    "convergencia": 1,
+    "finish_reward": 0,
+    "fall_reward": -1000,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.95,
+    "convergencia": 0.0001,
+    "finish_reward": 0,
+    "fall_reward": -100,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.9,
+    "convergencia": 1e-06,
+    "finish_reward": 0,
+    "fall_reward": -100,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.99,
+    "convergencia": 0.01,
+    "finish_reward": 0,
+    "fall_reward": -1000,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.95,
+    "convergencia": 1e-06,
+    "finish_reward": 0,
+    "fall_reward": -1000,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.99,
+    "convergencia": 1,
+    "finish_reward": 10,
+    "fall_reward": -100,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.9,
+    "convergencia": 0.0001,
+    "finish_reward": 10,
+    "fall_reward": -1000,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.9,
+    "convergencia": 1,
+    "finish_reward": 0,
+    "fall_reward": -10,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.9,
+    "convergencia": 0.0001,
+    "finish_reward": 100,
+    "fall_reward": -10,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.9,
+    "convergencia": 1,
+    "finish_reward": 10,
+    "fall_reward": -10,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.95,
+    "convergencia": 1,
+    "finish_reward": 10,
+    "fall_reward": -10,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.95,
+    "convergencia": 0.01,
+    "finish_reward": 10,
+    "fall_reward": -100,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.95,
+    "convergencia": 1,
+    "finish_reward": 100,
+    "fall_reward": -10,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.9,
+    "convergencia": 0.01,
+    "finish_reward": 0,
+    "fall_reward": -100,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.9,
+    "convergencia": 1,
+    "finish_reward": 10,
+    "fall_reward": -100,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.9,
+    "convergencia": 0.0001,
+    "finish_reward": 100,
+    "fall_reward": -10,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.99,
+    "convergencia": 1,
+    "finish_reward": 0,
+    "fall_reward": -10,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.9,
+    "convergencia": 1e-06,
+    "finish_reward": 100,
+    "fall_reward": -1000,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.95,
+    "convergencia": 1,
+    "finish_reward": 10,
+    "fall_reward": -1000,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.95,
+    "convergencia": 0.01,
+    "finish_reward": 0,
+    "fall_reward": -1000,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.99,
+    "convergencia": 0.0001,
+    "finish_reward": 10,
+    "fall_reward": -100,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.99,
+    "convergencia": 1,
+    "finish_reward": 100,
+    "fall_reward": -1000,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.99,
+    "convergencia": 0.01,
+    "finish_reward": 10,
+    "fall_reward": -1000,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.95,
+    "convergencia": 1,
+    "finish_reward": 10,
+    "fall_reward": -100,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.99,
+    "convergencia": 1,
+    "finish_reward": 0,
+    "fall_reward": -10,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.99,
+    "convergencia": 0.01,
+    "finish_reward": 0,
+    "fall_reward": -10,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.9,
+    "convergencia": 1,
+    "finish_reward": 10,
+    "fall_reward": -10,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.99,
+    "convergencia": 0.01,
+    "finish_reward": 0,
+    "fall_reward": -10,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.95,
+    "convergencia": 1,
+    "finish_reward": 10,
+    "fall_reward": -100,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.99,
+    "convergencia": 0.0001,
+    "finish_reward": 100,
+    "fall_reward": -100,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.95,
+    "convergencia": 1e-06,
+    "finish_reward": 0,
+    "fall_reward": -100,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.95,
+    "convergencia": 1e-06,
+    "finish_reward": 10,
+    "fall_reward": -100,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.99,
+    "convergencia": 1e-06,
+    "finish_reward": 100,
+    "fall_reward": -100,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.95,
+    "convergencia": 0.0001,
+    "finish_reward": 0,
+    "fall_reward": -1000,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.95,
+    "convergencia": 0.0001,
+    "finish_reward": 100,
+    "fall_reward": -100,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.99,
+    "convergencia": 0.0001,
+    "finish_reward": 0,
+    "fall_reward": -100,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.95,
+    "convergencia": 1e-06,
+    "finish_reward": 0,
+    "fall_reward": -100,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.99,
+    "convergencia": 0.0001,
+    "finish_reward": 0,
+    "fall_reward": -1000,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.99,
+    "convergencia": 0.01,
+    "finish_reward": 10,
+    "fall_reward": -1000,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.9,
+    "convergencia": 0.01,
+    "finish_reward": 100,
+    "fall_reward": -1000,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.95,
+    "convergencia": 0.01,
+    "finish_reward": 0,
+    "fall_reward": -100,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.9,
+    "convergencia": 1,
+    "finish_reward": 0,
+    "fall_reward": -100,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.99,
+    "convergencia": 0.01,
+    "finish_reward": 0,
+    "fall_reward": -1000,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.99,
+    "convergencia": 1,
+    "finish_reward": 0,
+    "fall_reward": -1000,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.95,
+    "convergencia": 0.0001,
+    "finish_reward": 10,
+    "fall_reward": -10,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.95,
+    "convergencia": 1,
+    "finish_reward": 0,
+    "fall_reward": -100,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.99,
+    "convergencia": 1e-06,
+    "finish_reward": 100,
+    "fall_reward": -1000,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.9,
+    "convergencia": 1e-06,
+    "finish_reward": 0,
+    "fall_reward": -100,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.99,
+    "convergencia": 1,
+    "finish_reward": 10,
+    "fall_reward": -1000,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.95,
+    "convergencia": 1,
+    "finish_reward": 100,
+    "fall_reward": -100,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.99,
+    "convergencia": 0.01,
+    "finish_reward": 10,
+    "fall_reward": -10,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.99,
+    "convergencia": 1e-06,
+    "finish_reward": 0,
+    "fall_reward": -100,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.99,
+    "convergencia": 0.0001,
+    "finish_reward": 100,
+    "fall_reward": -100,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.95,
+    "convergencia": 0.0001,
+    "finish_reward": 0,
+    "fall_reward": -10,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.95,
+    "convergencia": 1e-06,
+    "finish_reward": 100,
+    "fall_reward": -1000,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.9,
+    "convergencia": 1,
+    "finish_reward": 0,
+    "fall_reward": -1000,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.95,
+    "convergencia": 1,
+    "finish_reward": 100,
+    "fall_reward": -100,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.95,
+    "convergencia": 0.01,
+    "finish_reward": 100,
+    "fall_reward": -100,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.99,
+    "convergencia": 1,
+    "finish_reward": 10,
+    "fall_reward": -1000,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.99,
+    "convergencia": 1e-06,
+    "finish_reward": 0,
+    "fall_reward": -1000,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.95,
+    "convergencia": 0.0001,
+    "finish_reward": 100,
+    "fall_reward": -1000,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.9,
+    "convergencia": 0.01,
+    "finish_reward": 10,
+    "fall_reward": -100,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.95,
+    "convergencia": 0.0001,
+    "finish_reward": 10,
+    "fall_reward": -1000,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.95,
+    "convergencia": 1,
+    "finish_reward": 100,
+    "fall_reward": -10,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.95,
+    "convergencia": 1,
+    "finish_reward": 0,
+    "fall_reward": -100,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.99,
+    "convergencia": 0.0001,
+    "finish_reward": 100,
+    "fall_reward": -1000,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.9,
+    "convergencia": 1,
+    "finish_reward": 100,
+    "fall_reward": -100,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.9,
+    "convergencia": 1e-06,
+    "finish_reward": 0,
+    "fall_reward": -1000,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.99,
+    "convergencia": 0.01,
+    "finish_reward": 10,
+    "fall_reward": -100,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.99,
+    "convergencia": 0.01,
+    "finish_reward": 100,
+    "fall_reward": -10,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.9,
+    "convergencia": 0.0001,
+    "finish_reward": 10,
+    "fall_reward": -1000,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.99,
+    "convergencia": 1e-06,
+    "finish_reward": 10,
+    "fall_reward": -10,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.95,
+    "convergencia": 1e-06,
+    "finish_reward": 100,
+    "fall_reward": -1000,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.99,
+    "convergencia": 1e-06,
+    "finish_reward": 0,
+    "fall_reward": -10,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.95,
+    "convergencia": 1e-06,
+    "finish_reward": 100,
+    "fall_reward": -10,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.95,
+    "convergencia": 1,
+    "finish_reward": 100,
+    "fall_reward": -1000,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.95,
+    "convergencia": 1,
+    "finish_reward": 100,
+    "fall_reward": -10,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.9,
+    "convergencia": 0.01,
+    "finish_reward": 0,
+    "fall_reward": -10,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.99,
+    "convergencia": 0.0001,
+    "finish_reward": 100,
+    "fall_reward": -10,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.99,
+    "convergencia": 1,
+    "finish_reward": 100,
+    "fall_reward": -1000,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.95,
+    "convergencia": 0.0001,
+    "finish_reward": 0,
+    "fall_reward": -1000,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.95,
+    "convergencia": 1,
+    "finish_reward": 0,
+    "fall_reward": -1000,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.9,
+    "convergencia": 1e-06,
+    "finish_reward": 10,
+    "fall_reward": -10,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.95,
+    "convergencia": 0.0001,
+    "finish_reward": 10,
+    "fall_reward": -100,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.9,
+    "convergencia": 0.0001,
+    "finish_reward": 0,
+    "fall_reward": -100,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.95,
+    "convergencia": 0.01,
+    "finish_reward": 0,
+    "fall_reward": -1000,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.95,
+    "convergencia": 1e-06,
+    "finish_reward": 10,
+    "fall_reward": -1000,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.95,
+    "convergencia": 1e-06,
+    "finish_reward": 10,
+    "fall_reward": -10,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.95,
+    "convergencia": 1,
+    "finish_reward": 10,
+    "fall_reward": -1000,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.9,
+    "convergencia": 1e-06,
+    "finish_reward": 100,
+    "fall_reward": -100,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.99,
+    "convergencia": 1,
+    "finish_reward": 0,
+    "fall_reward": -100,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.9,
+    "convergencia": 1,
+    "finish_reward": 10,
+    "fall_reward": -1000,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.9,
+    "convergencia": 0.01,
+    "finish_reward": 10,
+    "fall_reward": -100,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.95,
+    "convergencia": 0.0001,
+    "finish_reward": 0,
+    "fall_reward": -100,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.99,
+    "convergencia": 0.0001,
+    "finish_reward": 10,
+    "fall_reward": -10,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.99,
+    "convergencia": 1,
+    "finish_reward": 0,
+    "fall_reward": -1000,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.95,
+    "convergencia": 0.0001,
+    "finish_reward": 10,
+    "fall_reward": -1000,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.9,
+    "convergencia": 0.0001,
+    "finish_reward": 100,
+    "fall_reward": -100,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.9,
+    "convergencia": 0.01,
+    "finish_reward": 100,
+    "fall_reward": -1000,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.95,
+    "convergencia": 0.0001,
+    "finish_reward": 0,
+    "fall_reward": -10,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.95,
+    "convergencia": 1e-06,
+    "finish_reward": 10,
+    "fall_reward": -100,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.95,
+    "convergencia": 1e-06,
+    "finish_reward": 100,
+    "fall_reward": -100,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.99,
+    "convergencia": 0.0001,
+    "finish_reward": 10,
+    "fall_reward": -100,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.99,
+    "convergencia": 0.01,
+    "finish_reward": 10,
+    "fall_reward": -100,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.95,
+    "convergencia": 1e-06,
+    "finish_reward": 100,
+    "fall_reward": -10,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.99,
+    "convergencia": 1e-06,
+    "finish_reward": 0,
+    "fall_reward": -10,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.9,
+    "convergencia": 0.0001,
+    "finish_reward": 100,
+    "fall_reward": -1000,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.9,
+    "convergencia": 0.0001,
+    "finish_reward": 0,
+    "fall_reward": -10,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.95,
+    "convergencia": 0.01,
+    "finish_reward": 0,
+    "fall_reward": -10,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.99,
+    "convergencia": 0.0001,
+    "finish_reward": 100,
+    "fall_reward": -10,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.95,
+    "convergencia": 0.01,
+    "finish_reward": 10,
+    "fall_reward": -100,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.9,
+    "convergencia": 1e-06,
+    "finish_reward": 100,
+    "fall_reward": -100,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.95,
+    "convergencia": 0.0001,
+    "finish_reward": 10,
+    "fall_reward": -100,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.95,
+    "convergencia": 1,
+    "finish_reward": 0,
+    "fall_reward": -10,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.9,
+    "convergencia": 1e-06,
+    "finish_reward": 10,
+    "fall_reward": -1000,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.9,
+    "convergencia": 1e-06,
+    "finish_reward": 10,
+    "fall_reward": -10,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.99,
+    "convergencia": 1e-06,
+    "finish_reward": 0,
+    "fall_reward": -10,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.9,
+    "convergencia": 0.01,
+    "finish_reward": 0,
+    "fall_reward": -100,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.9,
+    "convergencia": 0.01,
+    "finish_reward": 0,
+    "fall_reward": -1000,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.9,
+    "convergencia": 1,
+    "finish_reward": 0,
+    "fall_reward": -100,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.99,
+    "convergencia": 0.0001,
+    "finish_reward": 100,
+    "fall_reward": -10,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.95,
+    "convergencia": 0.01,
+    "finish_reward": 10,
+    "fall_reward": -10,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.9,
+    "convergencia": 0.01,
+    "finish_reward": 100,
+    "fall_reward": -10,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.95,
+    "convergencia": 0.01,
+    "finish_reward": 0,
+    "fall_reward": -100,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.95,
+    "convergencia": 1e-06,
+    "finish_reward": 10,
+    "fall_reward": -1000,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.9,
+    "convergencia": 0.01,
+    "finish_reward": 0,
+    "fall_reward": -10,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.95,
+    "convergencia": 0.01,
+    "finish_reward": 100,
+    "fall_reward": -100,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.95,
+    "convergencia": 0.01,
+    "finish_reward": 0,
+    "fall_reward": -10,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.9,
+    "convergencia": 0.0001,
+    "finish_reward": 0,
+    "fall_reward": -1000,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.99,
+    "convergencia": 1,
+    "finish_reward": 10,
+    "fall_reward": -1000,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.9,
+    "convergencia": 0.01,
+    "finish_reward": 10,
+    "fall_reward": -100,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.95,
+    "convergencia": 1,
+    "finish_reward": 0,
+    "fall_reward": -100,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.95,
+    "convergencia": 0.0001,
+    "finish_reward": 100,
+    "fall_reward": -10,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.95,
+    "convergencia": 1e-06,
+    "finish_reward": 0,
+    "fall_reward": -1000,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.95,
+    "convergencia": 0.0001,
+    "finish_reward": 0,
+    "fall_reward": -1000,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.9,
+    "convergencia": 1,
+    "finish_reward": 0,
+    "fall_reward": -100,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.9,
+    "convergencia": 1e-06,
+    "finish_reward": 0,
+    "fall_reward": -10,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.99,
+    "convergencia": 0.01,
+    "finish_reward": 100,
+    "fall_reward": -10,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.95,
+    "convergencia": 1e-06,
+    "finish_reward": 100,
+    "fall_reward": -1000,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.9,
+    "convergencia": 0.0001,
+    "finish_reward": 10,
+    "fall_reward": -100,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.95,
+    "convergencia": 0.0001,
+    "finish_reward": 0,
+    "fall_reward": -10,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.9,
+    "convergencia": 0.0001,
+    "finish_reward": 100,
+    "fall_reward": -1000,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.9,
+    "convergencia": 1,
+    "finish_reward": 10,
+    "fall_reward": -100,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.99,
+    "convergencia": 0.01,
+    "finish_reward": 100,
+    "fall_reward": -10,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.99,
+    "convergencia": 1,
+    "finish_reward": 100,
+    "fall_reward": -100,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.99,
+    "convergencia": 0.01,
+    "finish_reward": 100,
+    "fall_reward": -1000,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.9,
+    "convergencia": 0.0001,
+    "finish_reward": 100,
+    "fall_reward": -100,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.9,
+    "convergencia": 1,
+    "finish_reward": 10,
+    "fall_reward": -1000,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.9,
+    "convergencia": 0.01,
+    "finish_reward": 10,
+    "fall_reward": -1000,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.9,
+    "convergencia": 0.01,
+    "finish_reward": 10,
+    "fall_reward": -1000,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.95,
+    "convergencia": 1,
+    "finish_reward": 0,
+    "fall_reward": -10,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.95,
+    "convergencia": 1,
+    "finish_reward": 0,
+    "fall_reward": -1000,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.95,
+    "convergencia": 0.01,
+    "finish_reward": 10,
+    "fall_reward": -1000,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.99,
+    "convergencia": 1e-06,
+    "finish_reward": 10,
+    "fall_reward": -100,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.9,
+    "convergencia": 0.0001,
+    "finish_reward": 10,
+    "fall_reward": -1000,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.99,
+    "convergencia": 1,
+    "finish_reward": 0,
+    "fall_reward": -100,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.95,
+    "convergencia": 1e-06,
+    "finish_reward": 0,
+    "fall_reward": -10,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.9,
+    "convergencia": 0.01,
+    "finish_reward": 100,
+    "fall_reward": -10,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.95,
+    "convergencia": 1,
+    "finish_reward": 100,
+    "fall_reward": -100,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.9,
+    "convergencia": 1e-06,
+    "finish_reward": 100,
+    "fall_reward": -1000,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.9,
+    "convergencia": 0.01,
+    "finish_reward": 100,
+    "fall_reward": -1000,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.95,
+    "convergencia": 0.0001,
+    "finish_reward": 100,
+    "fall_reward": -1000,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.9,
+    "convergencia": 1e-06,
+    "finish_reward": 0,
+    "fall_reward": -10,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.9,
+    "convergencia": 1,
+    "finish_reward": 10,
+    "fall_reward": -10,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.99,
+    "convergencia": 1,
+    "finish_reward": 100,
+    "fall_reward": -100,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.9,
+    "convergencia": 1e-06,
+    "finish_reward": 0,
+    "fall_reward": -1000,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.99,
+    "convergencia": 1,
+    "finish_reward": 100,
+    "fall_reward": -10,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.99,
+    "convergencia": 1e-06,
+    "finish_reward": 0,
+    "fall_reward": -100,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.95,
+    "convergencia": 0.01,
+    "finish_reward": 100,
+    "fall_reward": -10,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.9,
+    "convergencia": 1,
+    "finish_reward": 100,
+    "fall_reward": -1000,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.99,
+    "convergencia": 0.01,
+    "finish_reward": 10,
+    "fall_reward": -1000,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.99,
+    "convergencia": 0.0001,
+    "finish_reward": 0,
+    "fall_reward": -100,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.99,
+    "convergencia": 1e-06,
+    "finish_reward": 10,
+    "fall_reward": -10,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.9,
+    "convergencia": 1e-06,
+    "finish_reward": 100,
+    "fall_reward": -100,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.99,
+    "convergencia": 0.0001,
+    "finish_reward": 100,
+    "fall_reward": -1000,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.9,
+    "convergencia": 0.0001,
+    "finish_reward": 0,
+    "fall_reward": -100,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.95,
+    "convergencia": 0.0001,
+    "finish_reward": 100,
+    "fall_reward": -10,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.9,
+    "convergencia": 1e-06,
+    "finish_reward": 10,
+    "fall_reward": -1000,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.9,
+    "convergencia": 0.01,
+    "finish_reward": 100,
+    "fall_reward": -100,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.99,
+    "convergencia": 1,
+    "finish_reward": 0,
+    "fall_reward": -100,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.9,
+    "convergencia": 1,
+    "finish_reward": 100,
+    "fall_reward": -1000,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.95,
+    "convergencia": 1e-06,
+    "finish_reward": 0,
+    "fall_reward": -1000,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.99,
+    "convergencia": 1,
+    "finish_reward": 10,
+    "fall_reward": -10,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.99,
+    "convergencia": 1e-06,
+    "finish_reward": 100,
+    "fall_reward": -1000,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.95,
+    "convergencia": 1,
+    "finish_reward": 10,
+    "fall_reward": -10,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.9,
+    "convergencia": 1,
+    "finish_reward": 100,
+    "fall_reward": -100,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.99,
+    "convergencia": 1,
+    "finish_reward": 10,
+    "fall_reward": -10,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.99,
+    "convergencia": 0.01,
+    "finish_reward": 100,
+    "fall_reward": -100,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.99,
+    "convergencia": 1,
+    "finish_reward": 0,
+    "fall_reward": -10,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.99,
+    "convergencia": 1e-06,
+    "finish_reward": 100,
+    "fall_reward": -10,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.95,
+    "convergencia": 1,
+    "finish_reward": 0,
+    "fall_reward": -1000,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.95,
+    "convergencia": 1,
+    "finish_reward": 0,
+    "fall_reward": -10,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.99,
+    "convergencia": 0.01,
+    "finish_reward": 0,
+    "fall_reward": -100,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.9,
+    "convergencia": 1e-06,
+    "finish_reward": 10,
+    "fall_reward": -1000,
+    "step_reward": 0.0
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.9,
+    "convergencia": 0.0001,
+    "finish_reward": 10,
+    "fall_reward": -100,
+    "step_reward": -1
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.9,
+    "convergencia": 1e-06,
+    "finish_reward": 100,
+    "fall_reward": -10,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.9,
+    "convergencia": 0.0001,
+    "finish_reward": 100,
+    "fall_reward": -1000,
+    "step_reward": -10
+  },
+  {
+    "algorithm": "value_iteration",
+    "gamma": 0.95,
+    "convergencia": 0.01,
+    "finish_reward": 0,
+    "fall_reward": -100,
+    "step_reward": -1
+  }
+]

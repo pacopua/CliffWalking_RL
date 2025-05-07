@@ -10,11 +10,11 @@ import os
 param_spaces = {
     "q_learning": {
         "gamma":     [0.90, 0.95, 0.99],
-        "alpha":     [0.1, 0.3, 0.5, 0.7],
+        "alpha":     [0.1, 0.3, 0.5],
         "epsilon":   [0.1, 0.3, 0.5],
         "t_max":     [100, 200],
         "num_episodes": [500, 2000, 4000],
-        "epsilon_decay": [0.999, 0.999999],
+        "epsilon_decay": [0.1, 0.001, 1e-6],
         "finish_reward": [0, 10, 100],
         "fall_reward": [-10, -100, -1000],
         "step_reward": [0.0, -1, -10],
