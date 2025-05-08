@@ -1,0 +1,10 @@
+{
+  "gamma": 0.9,
+  "alpha": 0.1,
+  "finish_reward": 0,
+  "fall_reward": -10,
+  "step_reward": -1,
+  "epsilon": 0.3,
+  "num_episodes": 2000,
+  "epsilon_decay": 0.001
+}
