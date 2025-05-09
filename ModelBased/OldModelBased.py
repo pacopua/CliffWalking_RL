@@ -21,12 +21,9 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np
 import collections
-import timeit
 import csv 
 
-from sklearn.model_selection import ParameterSampler
-from itertools import product
-
+env = gym.make('CliffWalking-v0', is_slippery = True)
 
 def test_episode(agent, env):
     state, _ = env.reset()
@@ -53,7 +50,7 @@ def draw_rewards(rewards):
     plt.show()
 
 #esta funcion comprueba todos los episodios (repeticiones) y para cada episodio el numero de iteraciones (t, que son los pasos)
-def check_improvements(agent, env):
+def check_improvements(agent):
     reward_test = 0.0
     for i in range(NUM_EPISODES):
         total_reward = 0.0
@@ -75,24 +72,19 @@ def train(agent):
     max_diffs = []
     t = 0
     best_reward = None
-    numerito = 0
+
     #itera hasta que converja
-    while True:
+    while best_reward is None or best_reward < REWARD_THRESHOLD:
         _, max_diff = agent.value_iteration()
         max_diffs.append(max_diff)
-        if numerito % 20 == 0:
-            print("After value iteration, max_diff = " + str(max_diff))
-        
+        print("After value iteration, max_diff = " + str(max_diff))
         t += 1
-        reward_test = check_improvements(agent, agent.env)
+        reward_test = check_improvements(agent)
         rewards.append(reward_test)
                
         if best_reward is None or reward_test > best_reward:
-            #print(f"Best reward updated {reward_test:.2f} at iteration {t}") 
+            print(f"Best reward updated {reward_test:.2f} at iteration {t}") 
             best_reward = reward_test
-            
-        if max_diff < agent.epsilon:
-            break
     
     return rewards, max_diffs
 
@@ -103,7 +95,7 @@ def print_policy(policy):
     print(np.array(policy_arrows).reshape([-1, 4]))
 '''
 class DirectEstimationAgent:
-    def __init__(self, env, gamma, num_trajectories, epsilon):
+    def __init__(self, env, gamma, num_trajectories):
         self.env = env
         self.state, _ = self.env.reset()
         self.rewards = collections.defaultdict(float)
@@ -111,7 +103,6 @@ class DirectEstimationAgent:
         self.V = np.zeros(self.env.observation_space.n)
         self.gamma = gamma
         self.num_trajectories = num_trajectories
-        self.epsilon = epsilon
 
     #esto es la exploracion, da un numero de pasos tomando acciones aleatorias
     #para cada acción que toma en un estado, se apunta su recompensa, y los diferentes
@@ -180,7 +171,16 @@ class DirectEstimationAgent:
     #es el maximo de la diferencia entre el valor de la 
     #iteracion t y t-1 de entre todos los estados!
     
-    def policy(self, env):   
+    def print_V(self):
+        rows, cols = 4, 12 # CliffWalking grid dimensions
+        policy_arrows = [V_value for V_value in self.V]
+        try:
+            print(np.array(policy_arrows).reshape(rows, cols))
+        except ValueError as e:
+            print(f"Error reshaping policy: {e}")
+            print("Policy array:", policy_arrows)
+
+    def policy(self):   
         print("Policy:")
         policy = np.zeros(env.observation_space.n) 
         #para cada uno de los estados, cojo la acción que me de mayor valor!
@@ -206,11 +206,11 @@ def print_policy(policy):
          print(f"Error reshaping policy: {e}")
          print("Policy array:", policy_arrows)
 
-def inspect_policy(agent, env):
+def inspect_policy(agent):
     is_done = False
     rewards = []
     for n_ep in range(NUM_EPISODES):
-        #print("episodio: ", n_ep)
+        print("episodio: ", n_ep)
         state, _ = env.reset()
         #print('Episode: ', n_ep)
         total_reward = 0
@@ -247,97 +247,46 @@ def print_learned_model(agent):
                 prob = count / total
                 reward = agent.rewards.get((state, action, s_next), 0)
                 print(f"    → State {s_next}: Prob={prob:.2f}, Reward={reward}")
+                
+
 
 def main():
-    # Define all factors and their levels
-    params = {
-        'gamma': [0.9, 0.95, 0.99],
-        'num_trajectories': [10000, 1000, 100],
-        'finish_reward': [0, 10, 100],
-        'fall_reward': [-10, -100, -1000],
-        'step_reward': [0, -1, -10],
-        'epsilon': [1, 0.1, 0.01, 0.005]
-    }
 
-    # --- Fractional Factorial Design ---
-    # Option 1: Random Sampling (recommended for large spaces)
-    n_combinations = 100  # Number of combinations to test (adjust as needed)
-    param_combinations = list(ParameterSampler(params, n_iter=n_combinations, random_state=42))
+    #print(env.unwrapped.P)
+    
+    #for i in range(5):
+    #    csv_file = f"cliffwalking_.csv"
 
-    # Option 2: Custom Fractional Design (e.g., every 10th combination)
-    # full_factorial = list(product(*params.values()))  # All 972 combinations
-    # param_combinations = full_factorial[::10]  # Take every 10th combination
+    agent = DirectEstimationAgent(env, gamma=GAMMA, num_trajectories = 10000)
+    
+    train(agent)
+    print_learned_model(agent)
+    print("1")
 
-    # --- Experiment Loop ---
-    with open('fractional_results.csv', 'w', newline='') as csvfile:
-        csv_writer = csv.writer(csvfile)
-        csv_writer.writerow(['gamma', 'num_trajectories', 'finish_reward', 
-                            'fall_reward', 'step_reward', 'epsilon', 
-                            'elapsed_time', 'avg_steps'])
+    agent.policy()
 
-        for combo in param_combinations:
-            print(f"Testing: {combo}")
-            BIGstep_average = 0
-            BIGtime_average = 0
+    print("2")
+    inspect_policy(agent)
 
-            # Run 3-5 repetitions per combo (instead of 10)
-            for _ in range(3):
-                env = gym.make('CliffWalking-v0', is_slippery=True)
+    print("vamos a enseñar agente!")
+    new_env = gym.make('CliffWalking-v0', render_mode = "human", is_slippery = True)
 
-                # Modify rewards based on current combo
-                for s in range(env.observation_space.n):
-                    for a in range(env.action_space.n):
-                        new_transitions = []
-                        for prob, next_s, reward, done in env.unwrapped.P[s][a]:
-                            if done:
-                                new_reward = combo['finish_reward']
-                            elif reward == -100:
-                                new_reward = combo['fall_reward']
-                            else:
-                                new_reward = combo['step_reward']
-                            new_transitions.append((prob, next_s, new_reward, done))
-                        env.unwrapped.P[s][a] = new_transitions
+    state, _ = new_env.reset()
+    new_env.render()
+    is_done = False
+    suma_rec = 0
+    t = 0
+    while not is_done:
+        action = agent.select_action(state)
+        state, reward, is_done, truncated, _ = new_env.step(action)
+        suma_rec += reward
+        new_env.render()
+        t += 1
 
-                # Train and evaluate
-                agent = DirectEstimationAgent(
-                    env, 
-                    gamma=combo['gamma'],
-                    num_trajectories=combo['num_trajectories'],
-                    epsilon=combo['epsilon']
-                )
+    print("Valor final: ", suma_rec)
 
-                start = timeit.default_timer()
-                train(agent)
-                end = timeit.default_timer()
+    print("imprimpo las V*")
+    agent.print_V()
 
-                # Evaluate policy
-                tot_steps = 0
-                for _ in range(NUM_EPISODES):
-                    state, _ = env.reset()
-                    steps = 0
-                    while True:
-                        action = agent.select_action(state)
-                        state, _, done, _, _ = env.step(action)
-                        steps += 1
-                        if done or steps >= T_MAX:
-                            break
-                    tot_steps += steps
-
-                BIGstep_average += tot_steps / NUM_EPISODES
-                BIGtime_average += (end - start)
-                env.close()
-
-            # Save results
-            csv_writer.writerow([
-                combo['gamma'],
-                combo['num_trajectories'],
-                combo['finish_reward'],
-                combo['fall_reward'],
-                combo['step_reward'],
-                combo['epsilon'],
-                BIGtime_average / 3,  # Avg over 3 runs
-                BIGstep_average / 3
-            ])
-            
 if __name__ == "__main__":
     main()

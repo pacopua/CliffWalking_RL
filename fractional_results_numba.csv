@@ -1,0 +1,2 @@
+gamma,num_trajectories,finish_reward,fall_reward,step_reward,epsilon,elapsed_time_train,avg_steps_eval
+0.95,1000,0,-100,-1,0.005,11.93291186999977,79.73333333333333
