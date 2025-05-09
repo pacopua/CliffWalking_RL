@@ -301,9 +301,7 @@ def run_enhanced_parallel_training(params, samples=10, num_train_episodes=2000, 
 if __name__ == "__main__":
     all_parameter_sets = []
     try:
-        with open('exploration_group_trials.json', 'r') as f:
-            all_parameter_sets.extend(json.load(f))
-        with open('learning_group_trials.json', 'r') as f:
+        with open('results/random_search_trials.json', 'r') as f:
             all_parameter_sets.extend(json.load(f))
     except FileNotFoundError as e:
         print(f"Error: Could not find parameter file: {e.filename}")
@@ -323,7 +321,7 @@ if __name__ == "__main__":
     force_num_workers = None
     # --- END CONFIGURABLE SETTINGS ---
 
-    csv_file_name = 'training_results_with_evaluation.csv'
+    csv_file_name = 'results/training_results_with_evaluation.csv'
     csv_header = [
         'gamma', 'alpha', 'epsilon', 'epsilon_decay', 'epsilon_end',
         'finish_reward', 'fall_reward', 'step_reward', 't_max',
