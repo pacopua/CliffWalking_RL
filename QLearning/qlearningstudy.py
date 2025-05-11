@@ -9,7 +9,6 @@ import sys
 import json
 import csv
 
-# Add debug information about CPU detection
 def get_cpu_info():
     """Get information about CPU detection for debugging"""
     info = {
@@ -21,7 +20,7 @@ def get_cpu_info():
     }
     return info
 
-# Numba-optimized core functions
+
 @njit
 def _select_action_numba(state, Q, n_actions, epsilon):
     if np.random.random() <= epsilon:
@@ -88,8 +87,8 @@ class HybridQLearningAgent:
         self.Q = np.random.uniform(low=0, high=0.01, size=(self.n_states, self.n_actions))
         self.gamma = gamma
         self.alpha = alpha
-        self.epsilon = epsilon # Initial epsilon for training
-        self.current_epsilon = epsilon # Current epsilon, decayed during training
+        self.epsilon = epsilon 
+        self.current_epsilon = epsilon 
         self.epsilon_end = epsilon_end
         self.epsilon_decay = epsilon_decay
         self.finish_reward = finish_reward
@@ -97,14 +96,13 @@ class HybridQLearningAgent:
         self.step_reward = step_reward
         self.use_custom_rewards = any(x is not None for x in [finish_reward, fall_reward, step_reward])
         self.t_max = t_max
-        self.training_steps_counter = 0 # Renamed to avoid conflict
+        self.training_steps_counter = 0 
         self.GOAL_STATE_CLIFFWALKING = 47
 
     def decay_epsilon(self):
         self.current_epsilon = max(self.epsilon_end, self.current_epsilon * (1 - self.epsilon_decay))
 
     def select_action(self, state, training=True):
-        # Use self.current_epsilon for training, 0 for evaluation
         epsilon_to_use = self.current_epsilon if training else 0.0
         return _select_action_numba(state, self.Q, self.n_actions, epsilon_to_use)
 
@@ -120,36 +118,30 @@ class HybridQLearningAgent:
             self.Q, state, action, reward, next_state, is_done, self.alpha, self.gamma
         )
 
-    def learn_from_episode(self): # This is for a single training episode
+    def learn_from_episode(self): 
         state, _ = self.env.reset()
-        # Reset current_epsilon at the start of a training session if needed, or ensure it's handled by train()
-        # For now, assuming train() manages the overall epsilon decay schedule.
 
         for step in range(self.t_max):
-            action = self.select_action(state, training=True) # Always explore during training episode
+            action = self.select_action(state, training=True) 
             next_state, env_reward, terminated, truncated, _ = self.env.step(action)
             reward = self.modify_reward(state, action, next_state, env_reward, terminated)
-            self.update_Q(state, action, reward, next_state, terminated) # Update Q-table
+            self.update_Q(state, action, reward, next_state, terminated) 
             state = next_state
             self.training_steps_counter += 1
             if terminated or truncated:
                 break
-        # Training metrics are not primary focus here, but could be collected if needed
-        # For this structure, evaluation metrics are collected separately
-        return # No explicit return needed if metrics are collected outside or via evaluate
+        return 
 
     def train(self, num_episodes):
-        # Reset epsilon at the start of a full training run
-        self.current_epsilon = self.epsilon # Use the initial epsilon from params
+        self.current_epsilon = self.epsilon
 
         for i in range(num_episodes):
-            self.learn_from_episode() # Run one training episode
-            self.decay_epsilon()      # Decay epsilon after each episode
+            self.learn_from_episode() 
+            self.decay_epsilon()      
 
         return {'Q': self.Q, 'total_training_steps': self.training_steps_counter}
 
     def evaluate(self, num_eval_episodes):
-        """Evaluates the agent's greedy policy."""
         eval_rewards = []
         eval_successes = []
         eval_steps = []
@@ -161,9 +153,8 @@ class HybridQLearningAgent:
             is_successful = False
             for step in range(self.t_max):
                 episode_steps += 1
-                action = self.select_action(state, training=False) # Epsilon = 0 for evaluation
+                action = self.select_action(state, training=False) 
                 next_state, env_reward, terminated, truncated, _ = self.env.step(action)
-                # Use modified rewards for evaluation consistency if desired, or original env_reward
                 reward = self.modify_reward(state, action, next_state, env_reward, terminated)
                 episode_reward += reward
                 state = next_state
@@ -196,14 +187,14 @@ def worker_initializer():
     np.random.seed(seed)
 
 def train_worker(worker_args):
-    worker_id, params, num_train_episodes, num_eval_episodes = worker_args # Added num_eval_episodes
+    worker_id, params, num_train_episodes, num_eval_episodes = worker_args 
     try:
         env = gym.make("CliffWalking-v0", render_mode=None, is_slippery=True)
         agent = HybridQLearningAgent(
             env=env,
             gamma=params.get('gamma', 0.99),
             alpha=params.get('alpha', 0.1),
-            epsilon=params.get('epsilon', 0.5), # This is initial epsilon for training
+            epsilon=params.get('epsilon', 0.5), 
             epsilon_decay=params.get('epsilon_decay', 0.001),
             epsilon_end=params.get('epsilon_end', 0.01),
             finish_reward=params.get('finish_reward'),
@@ -213,18 +204,17 @@ def train_worker(worker_args):
         )
 
         start_time = time.time()
-        training_details = agent.train(num_train_episodes) # Train the agent
+        training_details = agent.train(num_train_episodes)
         training_time = time.time() - start_time
 
-        # After training, evaluate the learned policy
         eval_results = agent.evaluate(num_eval_episodes)
 
         results_to_return = {
             'sample_id': worker_id,
             'training_time': training_time,
-            'Q_final': training_details['Q'], # Could be large, consider if needed
+            'Q_final': training_details['Q'], 
             'total_training_steps': training_details['total_training_steps'],
-            **eval_results # Add all evaluation metrics
+            **eval_results 
         }
         env.close()
         return results_to_return
@@ -262,20 +252,17 @@ def run_enhanced_parallel_training(params, samples=10, num_train_episodes=2000, 
         print("No results returned from workers!")
         return None
 
-    # Aggregate evaluation metrics across samples
     all_eval_mean_rewards = np.array([r['eval_mean_reward'] for r in raw_results_list if 'eval_mean_reward' in r])
     all_eval_success_rates = np.array([r['eval_success_rate'] for r in raw_results_list if 'eval_success_rate' in r])
     all_eval_mean_steps_if_successful = np.array([r['eval_mean_steps_if_successful'] for r in raw_results_list if 'eval_mean_steps_if_successful' in r])
     all_training_times = np.array([r['training_time'] for r in raw_results_list if 'training_time' in r])
 
-    # Calculate mean and std for aggregated metrics
     final_eval_mean_reward = np.nanmean(all_eval_mean_rewards) if len(all_eval_mean_rewards) > 0 else np.nan
     final_eval_std_reward = np.nanstd(all_eval_mean_rewards) if len(all_eval_mean_rewards) > 0 else np.nan
 
     final_eval_mean_success_rate = np.nanmean(all_eval_success_rates) if len(all_eval_success_rates) > 0 else np.nan
     final_eval_std_success_rate = np.nanstd(all_eval_success_rates) if len(all_eval_success_rates) > 0 else np.nan
 
-    # For steps, only average if there were successful episodes
     valid_steps = all_eval_mean_steps_if_successful[~np.isnan(all_eval_mean_steps_if_successful)]
     final_eval_mean_steps_if_successful = np.nanmean(valid_steps) if len(valid_steps) > 0 else np.nan
     final_eval_std_steps_if_successful = np.nanstd(valid_steps) if len(valid_steps) > 0 else np.nan
@@ -295,7 +282,6 @@ def run_enhanced_parallel_training(params, samples=10, num_train_episodes=2000, 
         'total_wall_clock_time': total_wall_clock_time,
         'speedup_factor': sum(all_training_times) / total_wall_clock_time if total_wall_clock_time > 0 and len(all_training_times) > 0 else 0,
         'cpu_info': cpu_info,
-        # 'all_Qs_final': [r['Q_final'] for r in raw_results_list] # Optional: if you need all Q tables
     }
 
 if __name__ == "__main__":
@@ -314,12 +300,11 @@ if __name__ == "__main__":
         print("No parameter sets found. Exiting.")
         sys.exit(0)
 
-    # --- CONFIGURABLE SETTINGS ---
+    # configurable 
     default_num_train_episodes = 2000
-    num_eval_episodes_after_training = 100 # Number of episodes for final evaluation
+    num_eval_episodes_after_training = 100 
     samples_per_param_set = 5
     force_num_workers = None
-    # --- END CONFIGURABLE SETTINGS ---
 
     csv_file_name = 'results/training_results_with_evaluation.csv'
     csv_header = [
@@ -327,9 +312,9 @@ if __name__ == "__main__":
         'finish_reward', 'fall_reward', 'step_reward', 't_max',
         'num_train_episodes', 'num_eval_episodes',
         'samples_per_param_set',
-        'eval_mean_reward', 'eval_std_reward',                           # EVAL
-        'eval_mean_success_rate', 'eval_std_success_rate',               # EVAL
-        'eval_mean_steps_if_successful', 'eval_std_steps_if_successful',# EVAL
+        'eval_mean_reward', 'eval_std_reward',                           
+        'eval_mean_success_rate', 'eval_std_success_rate',               
+        'eval_mean_steps_if_successful', 'eval_std_steps_if_successful',
         'mean_training_time_per_sample', 'std_training_time_per_sample',
         'total_wall_clock_time', 'speedup_factor',
         'os_cpu_count', 'available_processors'
@@ -346,23 +331,22 @@ if __name__ == "__main__":
         print(f"Parameters from JSON: {current_params_from_json}")
 
         num_train_episodes_for_this_run = current_params_from_json.get('num_episodes', default_num_train_episodes)
-        # 'num_episodes' from JSON is now interpreted as num_train_episodes
 
         final_results_agg = run_enhanced_parallel_training(
-            params=current_params_from_json, # Pass the full set from JSON
+            params=current_params_from_json, 
             samples=samples_per_param_set,
             num_train_episodes=num_train_episodes_for_this_run,
-            num_eval_episodes=num_eval_episodes_after_training, # New argument
+            num_eval_episodes=num_eval_episodes_after_training, 
             force_num_workers=force_num_workers
         )
 
         if final_results_agg:
             row_data = {
-                **current_params_from_json, # Input parameters
+                **current_params_from_json, 
                 'num_train_episodes': num_train_episodes_for_this_run,
                 'num_eval_episodes': num_eval_episodes_after_training,
                 'samples_per_param_set': samples_per_param_set,
-                **final_results_agg # Aggregated results including eval metrics
+                **final_results_agg 
             }
             row_data['os_cpu_count'] = final_results_agg['cpu_info'].get('os_cpu_count')
             row_data['available_processors'] = final_results_agg['cpu_info'].get('available_processors')

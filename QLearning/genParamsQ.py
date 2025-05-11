@@ -6,22 +6,22 @@ param_distributions = {
     "alpha":         [0.05, 0.1, 0.2, 0.3, 0.5],
     "epsilon":       [0.3, 0.5, 0.7, 1.0],
     "epsilon_end":   [0.01, 0.05, 0.1],
-    "num_episodes":  [1000, 2000, 4000, 8000, 12000], # Max 12k as you mentioned
+    "num_episodes":  [1000, 2000, 4000, 8000, 12000],
     "epsilon_decay": [0.001, 0.0005, 0.0001, 0.00005],
     "rewards_tuple": [(0, -100, -1), (10, -100, -1), (100, -100, -1), (0, -100, 0)],
     "t_max":         [200]
 }
 
-num_desired_unique_trials = 500 # Your target
-generated_trials_set = set() # Use a set to store frozensets of trial items for uniqueness
+num_desired_unique_trials = 500 
+generated_trials_set = set() 
 trials_list = []
-max_attempts = num_desired_unique_trials * 5 # Stop if it's too hard to find new unique trials (e.g., space is small)
+max_attempts = num_desired_unique_trials * 5    # si es demasiado dificil de generar, se detiene
 attempts = 0
 
 while len(trials_list) < num_desired_unique_trials and attempts < max_attempts:
     attempts += 1
     trial = {}
-    current_trial_items = [] # For checking uniqueness
+    current_trial_items = [] 
 
     for param_name, values in param_distributions.items():
         chosen_value = random.choice(values)
@@ -29,7 +29,6 @@ while len(trials_list) < num_desired_unique_trials and attempts < max_attempts:
             trial["finish_reward"] = chosen_value[0]
             trial["fall_reward"] = chosen_value[1]
             trial["step_reward"] = chosen_value[2]
-            # Add to items for uniqueness check
             current_trial_items.append(("finish_reward", chosen_value[0]))
             current_trial_items.append(("fall_reward", chosen_value[1]))
             current_trial_items.append(("step_reward", chosen_value[2]))
@@ -37,9 +36,6 @@ while len(trials_list) < num_desired_unique_trials and attempts < max_attempts:
             trial[param_name] = chosen_value
             current_trial_items.append((param_name, chosen_value))
 
-    # Create a frozenset of items to check for uniqueness because dicts are unhashable
-    # and item order in a dict might vary across Python versions for frozenset of dict.items()
-    # Sorting items by key ensures consistent representation for the set
     trial_signature = frozenset(sorted(current_trial_items))
 
     if trial_signature not in generated_trials_set:
