@@ -81,6 +81,29 @@ else:
     df_problematic_rewards = pd.DataFrame()
     df_main_analysis = df.copy()
 
+# --- Clean Training Times ---
+if 'mean_training_time_per_sample' in df_main_analysis.columns:
+    original_time_count = len(df_main_analysis)
+    negative_time_mask = df_main_analysis['mean_training_time_per_sample'] < 0
+    num_negative_times = negative_time_mask.sum()
+
+    if num_negative_times > 0:
+        print(f"\nWarning: Found {num_negative_times} runs with negative 'mean_training_time_per_sample'.")
+        
+        # Option A: Set to NaN (they will then be dropped or imputed by later steps if time is used)
+        # df_main_analysis.loc[negative_time_mask, 'mean_training_time_per_sample'] = np.nan
+        # print("Negative times have been set to NaN.")
+
+        # Option B: Drop these rows entirely if they are few and you suspect other issues with them
+        df_main_analysis = df_main_analysis[~negative_time_mask]
+        print(f"Dropped {num_negative_times} rows with negative training times.")
+        print(f"Shape of df_main_analysis after dropping negative time rows: {df_main_analysis.shape}")
+    
+    # Optional: Cap extremely high unrealistic times if any (e.g. > 3 * median or something)
+    # This is more about outlier handling than fixing errors.
+    # q_high = df_main_analysis['mean_training_time_per_sample'].quantile(0.99)
+    # df_main_analysis.loc[df_main_analysis['mean_training_time_per_sample'] > q_high, 'mean_training_time_per_sample'] = q_high
+
 # --- 3. Handle NaNs in the Target Metric for df_main_analysis ---
 if TARGET_METRIC_FOR_ANALYSIS not in df_main_analysis.columns:
     print(f"Error: Target metric '{TARGET_METRIC_FOR_ANALYSIS}' not found in df_main_analysis. Exiting.")
@@ -245,4 +268,148 @@ else:
             for i in sorted_indices:
                 print(f"  {feature_names[i]}: {importances[i]:.4f}")
 
-print("\nAnalysis complete.")
+
+# --- 6. Analysis of Top Performing Combinations ---
+if df_main_analysis.empty or TARGET_METRIC_FOR_ANALYSIS not in df_main_analysis.columns:
+    print("\nSkipping top combinations analysis: No valid data.")
+else:
+    print(f"\n--- Analyzing Top Performing Combinations (Target: {TARGET_METRIC_FOR_ANALYSIS}) ---")
+
+    # Ensure 'mean_training_time_per_sample' exists and is numeric
+    if 'mean_training_time_per_sample' not in df_main_analysis.columns:
+        print("Warning: 'mean_training_time_per_sample' column not found. Cannot include in combined score.")
+        # Proceed without time in score, or handle as error
+        # For this example, we'll proceed, and time_weight will effectively be 0 if col is missing
+        df_main_analysis['mean_training_time_per_sample'] = np.nan # Ensure column exists to avoid KeyError
+
+    df_main_analysis['mean_training_time_per_sample'] = pd.to_numeric(df_main_analysis['mean_training_time_per_sample'], errors='coerce')
+
+    # Create a copy for this specific analysis to avoid modifying df_main_analysis too much
+    df_top_analysis = df_main_analysis.copy()
+
+    # --- Define weights for the combined score ---
+    # We want to MINIMIZE steps and MINIMIZE time.
+    # If TARGET_METRIC_FOR_ANALYSIS is 'eval_mean_reward', then higher is better for reward.
+    # We need to normalize them to be on a similar scale before combining.
+
+    steps_col = 'eval_mean_steps_if_successful' # Assuming this is what you mean by "pasos hasta el destino"
+    time_col = 'mean_training_time_per_sample'
+
+    # Check if necessary columns exist
+    if steps_col not in df_top_analysis.columns:
+        print(f"Warning: '{steps_col}' not found. Cannot compute combined score based on steps.")
+    elif time_col not in df_top_analysis.columns:
+        print(f"Warning: '{time_col}' not found. Cannot compute combined score based on time.")
+    else:
+        # --- Normalization (Min-Max Scaling to [0, 1]) ---
+        # For steps: lower is better. So, (max - x) / (max - min) will make higher scores better.
+        # Or, more simply, scale so 0 is best, 1 is worst, then subtract from 1 for score.
+        # For this combined score, let's make lower values better for both.
+        
+        # Filter out rows where steps or time is NaN for fair normalization and scoring
+        df_top_analysis.dropna(subset=[steps_col, time_col], inplace=True)
+
+        if not df_top_analysis.empty:
+            min_steps = df_top_analysis[steps_col].min()
+            max_steps = df_top_analysis[steps_col].max()
+            if max_steps == min_steps: # Avoid division by zero if all values are the same
+                 df_top_analysis['norm_steps'] = 0.0 if max_steps is not np.nan else np.nan
+            else:
+                df_top_analysis['norm_steps'] = (df_top_analysis[steps_col] - min_steps) / (max_steps - min_steps)
+
+            min_time = df_top_analysis[time_col].min()
+            max_time = df_top_analysis[time_col].max()
+            if max_time == min_time:
+                 df_top_analysis['norm_time'] = 0.0 if max_time is not np.nan else np.nan
+            else:
+                df_top_analysis['norm_time'] = (df_top_analysis[time_col] - min_time) / (max_time - min_time)
+
+            # --- Combined Score (lower is better) ---
+            # Ensure columns exist before trying to use them
+            if 'norm_steps' in df_top_analysis.columns and 'norm_time' in df_top_analysis.columns:
+                steps_weight = 0.5
+                time_weight = 0.5
+                df_top_analysis['combined_score'] = (steps_weight * df_top_analysis['norm_steps'] +
+                                                     time_weight * df_top_analysis['norm_time'])
+                
+                # Sort by the combined score (ascending, as lower is better)
+                top_n = 10
+                df_top_n = df_top_analysis.sort_values(by='combined_score', ascending=True).head(top_n)
+
+                print(f"\nTop {top_n} combinations based on combined score (steps and time):")
+                # Select a few key hyperparameters to display along with the scores
+                display_cols = ['gamma', 'alpha', 'epsilon_decay', 'num_train_episodes', 
+                                'step_reward', # To see if it's always -1 for top performers
+                                steps_col, time_col, 'combined_score', 'eval_mean_success_rate']
+                # Filter display_cols to only those present in df_top_n
+                actual_display_cols = [col for col in display_cols if col in df_top_n.columns]
+                print(df_top_n[actual_display_cols])
+
+                # --- Plotting the Top N Combinations ---
+                if not df_top_n.empty:
+                    # Create labels for the y-axis (e.g., by concatenating some key params)
+                    # Shorten for better display
+                    df_top_n['label'] = df_top_n.apply(
+                        lambda row: f"G:{row.get('gamma', 'N/A')}, A:{row.get('alpha', 'N/A')}, ED:{row.get('epsilon_decay', 'N/A')}\nEpsN:{row.get('num_train_episodes', 'N/A')}, SR:{row.get('step_reward', 'N/A')}",
+                        axis=1
+                    )
+                    
+                    fig, ax1 = plt.subplots(figsize=(14, 8)) # Increased figure size
+
+                    # Bar plot for steps on primary y-axis
+                    color_steps = 'tab:blue'
+                    ax1.set_xlabel('Performance Metrics')
+                    ax1.set_ylabel(steps_col.replace('_',' ').title(), color=color_steps)
+                    bars_steps = ax1.barh(df_top_n['label'], df_top_n[steps_col], color=color_steps, alpha=0.7, label=steps_col.replace('_',' ').title())
+                    ax1.tick_params(axis='y', labelcolor='black') # Keep y-axis labels black
+                    ax1.invert_yaxis() # Display best (top of df) at the top of plot
+
+                    # Add data labels for steps
+                    for bar in bars_steps:
+                        width = bar.get_width()
+                        ax1.text(width + 0.1, bar.get_y() + bar.get_height()/2.,
+                                 f'{width:.1f}', va='center', ha='left', color=color_steps)
+
+
+                    # Instantiate a second y-axis for time
+                    ax2 = ax1.twiny() # Share the same y-axis
+
+                    color_time = 'tab:red'
+                    # We need to plot time on the same horizontal axis direction.
+                    # Since bars_steps are plotted from left to right, ax2 also plots from left to right.
+                    # We can use a scatter plot or thin bars for time to differentiate.
+                    # For this example, let's use scatter points aligned with the bars.
+                    # ax2.set_ylabel(time_col.replace('_',' ').title(), color=color_time) # Not needed if using top x-axis
+                    ax2.set_xlabel(time_col.replace('_',' ').title(), color=color_time)
+                    
+                    # Plot time as points or small bars on the secondary x-axis (top)
+                    # To make them visually distinct and not overlapping too much,
+                    # we can plot them as points.
+                    points_time = ax2.scatter(df_top_n[time_col], df_top_n['label'], color=color_time, marker='o', s=100, label=time_col.replace('_',' ').title(), zorder=3)
+                    
+                    ax2.tick_params(axis='x', labelcolor=color_time)
+                    ax2.grid(False) # Turn off grid for secondary axis if desired
+
+                    fig.suptitle(f'Top {top_n} Hyperparameter Combinations (Lower Combined Score is Better)', fontsize=16)
+                    fig.tight_layout(rect=[0, 0, 1, 0.96]) # Adjust layout to make space for suptitle
+                    
+                    # Add a single legend for both
+                    # handles, labels = [], []
+                    # for ax in [ax1, ax2]:
+                    #     h, l = ax.get_legend_handles_labels()
+                    #     handles.extend(h)
+                    #     labels.extend(l)
+                    # if handles: # Only create legend if there are items
+                    #    fig.legend(handles, labels, loc='upper center', bbox_to_anchor=(0.5, -0.05), ncol=2)
+                    # Simpler: just label axes
+                    
+                    plt.savefig(f'{RESULTS_DIR}/plot_top_{top_n}_combinations_score.png', bbox_inches='tight')
+                    plt.show()
+                else:
+                    print("No top N combinations to plot (dataframe might be empty after sorting).")
+            else:
+                print("Normalized steps or time columns not found. Skipping combined score calculation.")
+        else:
+            print("DataFrame is empty after filtering NaNs for steps and time. Cannot calculate top combinations.")
+            
+print("\nAnalysis pipeline complete.")
