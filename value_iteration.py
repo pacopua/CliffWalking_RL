@@ -3,37 +3,21 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np
+import time
+import csv
 
 SLIPPERY = True
-MOD_REWARD = False
-FINISH_REWARD = 10000
-VOID_REWARD = -100
-step_penalty = -100
-CONVERGENCIA = 1e-9
+MOD_REWARD = True
 T_MAX = 200
 MEDIA = 500
-GAMMA = 0.99
+max_iterations = 10000
+gamma = [0.90, 0.95, 0.99]
+convergencia = [1, 0.01, 1e-4, 1e-6]
+finish_reward = [0, 10, 100]
+fall_reward = [-10, -100, -1000]
+step_reward = [0.0, -1, -10]
 
 
-max_iterations = 100
-
-env = gym.make("CliffWalking-v0", is_slippery=SLIPPERY)
-
-if MOD_REWARD:
-    for s in range(env.observation_space.n):
-        for a in range(env.action_space.n):
-            new_transitions = []
-            for prob, next_s, reward, done in env.unwrapped.P[s][a]:
-                # ajustamos la recompensa:
-                if done:
-                    if reward == -1:
-                        new_reward = FINISH_REWARD
-                elif reward == -100:
-                    new_reward = VOID_REWARD
-                else:
-                    new_reward = step_penalty
-                new_transitions.append((prob, next_s, new_reward, done))
-            env.unwrapped.P[s][a] = new_transitions
 
 def test_episode(agent, env):
     env.reset()
@@ -64,8 +48,10 @@ def draw_rewards(rewards, title="Rewards Over Episodes"):
     plt.tight_layout()
     plt.show()
 
-print(env.unwrapped.P)
 
+
+FALL_REWARD = -10
+FINISH_REWARD = 0
 
 class ValueIterationAgent:
     def __init__(self, env, gamma, max_iter):
@@ -76,9 +62,9 @@ class ValueIterationAgent:
         
     def calc_action_value(self, state, action):
         if state == 47:
-            return -1
+            return FINISH_REWARD
         if state in range(37, 47):
-            return -100
+            return FALL_REWARD
         action_value = sum([prob * (reward + self.gamma * self.V[next_state])
                             for prob, next_state, reward, _ 
                             in self.env.unwrapped.P[state][action]]) 
@@ -94,7 +80,7 @@ class ValueIterationAgent:
         return best_action
 
     def print_V(self):
-        rows, cols = 4, 12 # CliffWalking grid dimensions
+        rows, cols = 4, 12 
         policy_arrows = [V_value for V_value in self.V]
         try:
             print(np.array(policy_arrows).reshape(rows, cols))
@@ -103,8 +89,6 @@ class ValueIterationAgent:
             print("Policy array:", policy_arrows)
 
     def value_iteration(self):
-        #num_trajectories es el número de pasos aleatorios que va a dar, 
-        #de esta manera nos aseguramos de explorar bien el espacio
 
         max_diff = 0
         for state in range(self.env.observation_space.n):
@@ -153,17 +137,16 @@ def train(agent):
     for i in range(agent.max_iter):
         _, max_diff = agent.value_iteration()
         max_diffs.append(max_diff)
-        print("After value iteration, max_diff = " + str(max_diff))
+        #print("After value iteration, max_diff = " + str(max_diff))
         t += 1
 
         if max_diff < CONVERGENCIA:
             break
 
-    print("final")
+    #print("final")
     return rewards, max_diffs
 
-agent = ValueIterationAgent(env, gamma=GAMMA, max_iter = max_iterations)
-rewards, max_diffs = train(agent)
+
 
 def print_policy(policy):
     """Prints the policy in a grid format for CliffWalking."""
@@ -182,25 +165,135 @@ def print_policy(policy):
          print("Policy array:", policy_arrows)
 
 
-    
-policy = agent.policy()
-print_policy(policy)
-agent.print_V()
+
 
 is_done = False
-rewards = []
+paso = 1
+steps = 0
+resultados = []
+
+
+for GAMMA in gamma:
+    for CONVERGENCIA in convergencia:
+        for FINISH_REWARD in finish_reward:
+            for FALL_REWARD in fall_reward:
+                for STEP_REWARD in step_reward:
+                    env = gym.make("CliffWalking-v0", is_slippery=SLIPPERY)
+                    if MOD_REWARD:
+                        for s in range(env.observation_space.n):
+                            for a in range(env.action_space.n):
+                                new_transitions = []
+                                for prob, next_s, reward, done in env.unwrapped.P[s][a]:
+                                    # ajustamos la recompensa:
+                                    if done:
+                                        if reward == -1:
+                                            new_reward = FINISH_REWARD
+                                    elif reward == -100:
+                                        new_reward = FALL_REWARD
+                                    else:
+                                        new_reward = STEP_REWARD
+                                    new_transitions.append((prob, next_s, new_reward, done))
+                                env.unwrapped.P[s][a] = new_transitions
+                    agent = ValueIterationAgent(env, gamma=GAMMA, max_iter = max_iterations)
+                    start_time = time.time()
+                    train(agent)
+                    train_time = time.time() - start_time
+                    steps_list = []
+                    for n_ep in range(MEDIA):
+                        state, _ = env.reset()
+                        #print('Episode: ', n_ep)
+                        total_reward = 0
+                        steps = 0
+                        for i in range(T_MAX):
+                            action = agent.select_action(state)
+                            state, reward, is_done, truncated, _ = env.step(action)
+                            total_reward = total_reward + reward
+                            env.render()
+                            steps += 1
+                            if is_done:
+                                break
+                        steps_list.append(steps)
+                        
+
+
+                    avg_steps = np.mean(steps_list)
+                    std_steps = np.std(steps_list)
+
+                    resultados.append({
+                        'gamma': GAMMA,
+                        'convergencia': CONVERGENCIA,
+                        'finish_reward': FINISH_REWARD,
+                        'fall_reward': FALL_REWARD,
+                        'step_reward': STEP_REWARD,
+                        'avg_steps': avg_steps,
+                        'std_steps': std_steps,
+                        'train_time_sec': train_time
+                    })
+                    
+                    print(paso)
+                    paso += 1
+                        
+keys = resultados[0].keys()
+with open('value_iteration_results2.csv', 'w', newline='') as output_file:
+    dict_writer = csv.DictWriter(output_file, fieldnames=keys)
+    dict_writer.writeheader()
+    dict_writer.writerows(resultados)
+
+print("Resultados guardados en value_iteration_results.csv")    
+
+
+
+
+'''
+Best_config = [0.99 0.01 10 -1000 -10]
+Worst_succ_config = [0.9 1 10 -1000 -1]
+Worst_config = [0.9 1 0 -10 0]
+'''
+'''
+env = gym.make("CliffWalking-v0", is_slippery=SLIPPERY)
+if MOD_REWARD:
+    for s in range(env.observation_space.n):
+        for a in range(env.action_space.n):
+            new_transitions = []
+            for prob, next_s, reward, done in env.unwrapped.P[s][a]:
+                # ajustamos la recompensa:
+                if done:
+                    if reward == -1:
+                        new_reward = 0
+                elif reward == -100:
+                    new_reward = -10
+                else:
+                    new_reward = 0
+        new_transitions.append((prob, next_s, new_reward, done))
+
+env.unwrapped.P[s][a] = new_transitions
+agent = ValueIterationAgent(env, gamma=0.9, max_iter = max_iterations)
+start_time = time.time()
+train(agent)
+train_time = time.time() - start_time
+steps_list = []
 for n_ep in range(MEDIA):
     state, _ = env.reset()
-    print('Episode: ', n_ep)
+    #print('Episode: ', n_ep)
     total_reward = 0
+    steps = 0
     for i in range(T_MAX):
         action = agent.select_action(state)
         state, reward, is_done, truncated, _ = env.step(action)
         total_reward = total_reward + reward
         env.render()
+        steps += 1
         if is_done:
             break
-    rewards.append(total_reward)
-draw_rewards(rewards)
+    steps_list.append(steps)
+                        
 
+print()
+print()
+print_policy(agent.policy())
+print()
+print(np.mean(steps_list))
+avg_steps = np.mean(steps_list)
+std_steps = np.std(steps_list)
+'''
 
