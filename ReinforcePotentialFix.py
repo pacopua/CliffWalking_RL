@@ -1,10 +1,10 @@
-SLIPPERY = False
-TRAINING_EPISODES = 100000  # Might need more for slippery
-NUM_EPISODES = 5 # For evaluation after training
-GAMMA = 0.99 # Increased
+SLIPPERY = True
+TRAINING_EPISODES = 10000
+NUM_EPISODES = 5
+GAMMA = 0.95
 T_MAX = 200
-LEARNING_RATE = 0.005 # Drastically reduced
-LEARNING_RATE_DECAY = 0.9999 # Keep or slightly increase decay rate if LR is small
+LEARNING_RATE = 0.2
+LEARNING_RATE_DECAY = 0.99999999
 
 import gymnasium as gym
 import seaborn as sns
@@ -34,7 +34,7 @@ def print_policy(policy):
     policy_arrows = [visual_help[x] for x in policy]
     print(np.array(policy_arrows).reshape([4, 12]))
 
-class ReinforceAgent:'''
+class ReinforceAgent:
     def __init__(self, env, gamma, learning_rate, lr_decay=1, seed=0):
         self.env = env
         self.gamma = gamma
@@ -56,6 +56,50 @@ class ReinforceAgent:'''
 
     def update_policy(self, episode):
         states, actions, rewards = episode
+        
+        # Calculate discounted rewards
+        discounted_rewards = np.zeros_like(rewards, dtype=float)
+        running_add = 0
+        for t in reversed(range(len(rewards))):
+            running_add = running_add * self.gamma + rewards[t]
+            discounted_rewards[t] = running_add
+        
+        # Normalize rewards for stable training
+        if len(discounted_rewards) > 1:
+            discounted_rewards = (discounted_rewards - np.mean(discounted_rewards)) / (np.std(discounted_rewards) + 1e-8)
+        
+        # Calculate loss for monitoring
+        loss = -np.sum(np.log(self.policy_table[states, actions] + 1e-8) * discounted_rewards) / len(states)
+        
+        # Update policy using the proper policy gradient
+        policy_logits = np.log(self.policy_table + 1e-8)
+        
+        for t in range(len(states)):
+            G_t = discounted_rewards[t]
+            s = states[t]
+            a = actions[t]
+            
+            # Standard REINFORCE gradient: G_t * ∇log(π(a|s))
+            # For a softmax policy, the gradient of log π(a|s) for the taken action is (1 - π(a|s))
+            action_probs = self.policy_table[s]
+            
+            # Add a small entropy bonus to prevent premature convergence
+            entropy_coef = 0.01
+            entropy = -np.sum(action_probs * np.log(action_probs + 1e-8))
+            
+            # Update taken action's probability
+            policy_gradient = G_t  # The standard gradient
+            policy_logits[s, a] += self.learning_rate * (policy_gradient + entropy_coef * entropy)
+        
+        # Convert logits back to probabilities
+        exp_logits = np.exp(policy_logits)
+        self.policy_table = exp_logits / np.sum(exp_logits, axis=1, keepdims=True)
+        
+        return loss
+
+    '''
+    def update_policy(self, episode):
+        states, actions, rewards = episode
         discounted_rewards = np.zeros_like(rewards)
         running_add = 0
         for t in reversed(range(len(rewards))):
@@ -75,6 +119,7 @@ class ReinforceAgent:'''
         exp_logits = np.exp(policy_logits)
         self.policy_table = exp_logits / np.sum(exp_logits, axis=1, keepdims=True)
         return loss
+    '''
 
     def learn_from_episode(self):
         state, _ = self.env.reset()
@@ -92,114 +137,13 @@ class ReinforceAgent:'''
         loss = self.update_policy(zip(*episode))
         self.learning_rate = self.learning_rate * self.lr_decay
         return total_reward, loss
-
+    
     def policy(self):
         policy = np.zeros(env.observation_space.n)
         for s in range(env.observation_space.n):
             action_probabilities = self.policy_table[s]
             policy[s] = np.argmax(action_probabilities)
-        return policy, self.policy_table'''
-
-class ReinforceAgent:
-    def __init__(self, env, gamma, learning_rate, lr_decay=1, seed=0):
-        self.env = env
-        self.gamma = gamma
-        self.learning_rate = learning_rate
-        self.lr_decay = lr_decay
-        np.random.seed(seed)
-
-        # Store logits as the primary parameters
-        # Initialize to zeros for uniform initial probabilities after softmax
-        self.policy_logits = np.zeros((self.env.observation_space.n, self.env.action_space.n))
-
-    def _get_action_probabilities(self, state):
-        logits_s = self.policy_logits[state]
-        # Softmax for probabilities (with stabilization)
-        exp_logits_s = np.exp(logits_s - np.max(logits_s))
-        return exp_logits_s / np.sum(exp_logits_s)
-
-    def select_action(self, state, training=True):
-        action_probabilities = self._get_action_probabilities(state)
-        if training:
-            return np.random.choice(self.env.action_space.n, p=action_probabilities)
-        else:
-            return np.argmax(action_probabilities)
-
-    def update_policy(self, episode_data): # episode_data is from zip(*episode)
-        states_list, actions_list, rewards_list = [list(t) for t in episode_data]
-        
-        states = np.array(states_list)
-        actions = np.array(actions_list)
-        rewards = np.array(rewards_list, dtype=float)
-
-        discounted_rewards = np.zeros_like(rewards)
-        running_add = 0
-        for t in reversed(range(len(rewards))):
-            running_add = running_add * self.gamma + rewards[t]
-            discounted_rewards[t] = running_add
-
-        # Normalize discounted rewards (helps stabilize training - acts as a simple baseline)
-        discounted_rewards = (discounted_rewards - np.mean(discounted_rewards)) / (np.std(discounted_rewards) + 1e-9)
-
-        total_objective_terms = 0.0 # For calculating loss (sum of log_prob * G_t)
-
-        for t in range(len(states)):
-            s_t = states[t]
-            a_t = actions[t]
-            G_t = discounted_rewards[t]
-
-            current_action_probs_st = self._get_action_probabilities(s_t)
-            
-            # Calculate log_prob for the loss objective *before* updating logits
-            log_prob_action_taken = np.log(current_action_probs_st[a_t] + 1e-9) # Add epsilon for stability
-            total_objective_terms += log_prob_action_taken * G_t
-
-            # Gradient update for all actions' logits in state s_t
-            for a_k in range(self.env.action_space.n):
-                if a_k == a_t:
-                    gradient_component = (1 - current_action_probs_st[a_k])
-                else:
-                    gradient_component = (0 - current_action_probs_st[a_k]) # i.e., -current_action_probs_st[a_k]
-                
-                self.policy_logits[s_t, a_k] += self.learning_rate * G_t * gradient_component
-        
-        # Loss is the negative of the sum of (log_prob * G_t) terms, usually averaged
-        loss = -total_objective_terms / len(states) 
-        return loss
-
-    def learn_from_episode(self):
-        state, _ = self.env.reset()
-        episode_buffer = [] # Changed name from 'episode' for clarity
-        done = False
-        terminated = False # Gymnasium update
-        step = 0
-        total_reward = 0
-        while not done and not terminated and step < T_MAX:
-            action = self.select_action(state, training=True) # Ensure training=True
-            next_state, reward, terminated, truncated, _ = self.env.step(action)
-            done = terminated or truncated # In CliffWalking, truncated usually means T_MAX hit by wrapper
-            
-            episode_buffer.append((state, action, reward))
-            state = next_state
-            total_reward += reward # Use +=
-            step += 1
-        
-        if not episode_buffer: # Handle empty episodes if T_MAX=0 or immediate termination
-            return total_reward, 0.0 
-
-        # Pass the zipped episode data correctly
-        loss = self.update_policy(list(zip(*episode_buffer)))
-        self.learning_rate *= self.lr_decay # Use *=
-        return total_reward, loss
-
-    def policy(self):
-        # Derive deterministic policy and policy table (probabilities) from logits
-        policy_table_probs = np.zeros_like(self.policy_logits)
-        for s in range(self.env.observation_space.n):
-            policy_table_probs[s] = self._get_action_probabilities(s)
-        
-        deterministic_policy = np.argmax(policy_table_probs, axis=1)
-        return deterministic_policy, policy_table_probs
+        return policy, self.policy_table
 
 env = gym.make("CliffWalking-v0", is_slippery=SLIPPERY)
 for s in range(env.observation_space.n):
@@ -222,7 +166,18 @@ agent = ReinforceAgent(env, gamma=GAMMA, learning_rate=LEARNING_RATE,
                        lr_decay=LEARNING_RATE_DECAY, seed=8)
 rewards = []
 losses = []
-
+'''
+for i in range(TRAINING_EPISODES):
+    reward, loss = agent.learn_from_episode()
+    policy, policy_table = agent.policy()
+    print_policy(policy)
+    #print(policy_table)
+    #print(f"Last reward: {reward}, last loss: {loss}, new lr: {agent.learning_rate}")
+    #print_policy(policy)
+    #print(f"End of iteration [{i + 1}/{TRAINING_EPISODES}]")
+    rewards.append(reward)
+    losses.append(loss)
+'''
 for i in range(TRAINING_EPISODES):
     reward, loss = agent.learn_from_episode()
     policy, policy_table = agent.policy()
@@ -248,6 +203,8 @@ for i in range(TRAINING_EPISODES):
         print_policy(policy)
         print()
 
+
+print("HOLA1")
 is_done = False
 rewards = []
 steps = 0
