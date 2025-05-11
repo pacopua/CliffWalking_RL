@@ -338,8 +338,8 @@ else:
 
                 print(f"\nTop {top_n} combinations based on combined score (steps and time):")
                 # Select a few key hyperparameters to display along with the scores
-                display_cols = ['gamma', 'alpha', 'epsilon_decay', 'num_train_episodes', 
-                                'step_reward', # To see if it's always -1 for top performers
+                display_cols = ['gamma', 'alpha', 'epsilon', 'epsilon_decay', 'epsilon_end', 'num_train_episodes',
+                                'step_reward', 'finish_reward', 'fall_reward',
                                 steps_col, time_col, 'combined_score', 'eval_mean_success_rate']
                 # Filter display_cols to only those present in df_top_n
                 actual_display_cols = [col for col in display_cols if col in df_top_n.columns]
