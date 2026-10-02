@@ -6,8 +6,8 @@ An experimental comparison of four reinforcement learning algorithms (**Value It
 > The full write-up (in Spanish, 48 pages) is in [`report/Practica2.pdf`](report/Practica2.pdf).
 
 <p align="center">
-  <img src="q_learning/results/plot_rf_feature_importances_eval_mean_steps_if_successful.png" width="650" alt="Random Forest hyperparameter importances for Q-Learning">
-  <br><em>Q-Learning: the learning rate α dominates the number of evaluation steps to reach the goal.</em>
+  <img src="assets/cliffwalking.png" width="720" alt="CliffWalking-v0 environment: a 4x12 grid with the agent at the start, a cliff along the bottom row and the goal at the bottom right">
+  <br><em>The <code>CliffWalking-v0</code> environment (Gymnasium render).</em>
 </p>
 
 ## The environment
@@ -29,10 +29,16 @@ A 4×12 grid. The agent starts at state 36 (bottom left) and must reach state 47
 | **Q-Learning** | A **low learning rate α** matters most, followed by a slow ε-decay and enough episodes (about 4,000–8,000). Long, careful exploration is key in a stochastic environment. | γ 0.95, α 0.05, ε 0.5, ε-decay 0.001, ε-end 0.01, 4,000 episodes, rewards (100, −100, −1) |
 | **REINFORCE** | Performed poorly overall. A learning-rate decay of 1.0 (no decay) was better on every metric and much faster. Adding an entropy bonus to avoid local optima did **not** help. | See `reinforce/Figures/top_10_configurations.png` |
 
+<p align="center">
+  <img src="q_learning/results/plot_rf_feature_importances_eval_mean_steps_if_successful.png" width="600" alt="Random Forest hyperparameter importances for Q-Learning">
+  <br><em>Q-Learning: the learning rate α dominates the number of evaluation steps to reach the goal.</em>
+</p>
+
 ## Repository layout
 
 ```
 ├── report/Practica2.pdf          Full report (Spanish)
+├── assets/                       README images
 ├── tools/genParams.py            Shared random-search trial generator (JSON)
 ├── value_iteration/              Grid search over γ, convergence threshold and rewards
 ├── model_based/
