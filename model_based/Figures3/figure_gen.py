@@ -7,7 +7,7 @@ from matplotlib.colors import Normalize
 from matplotlib import cm
 
 # Load the data
-df = pd.read_csv('fractional_results.csv')
+df = pd.read_csv('../fractional_results.csv')
 
 # Display basic statistics
 print(df.describe())

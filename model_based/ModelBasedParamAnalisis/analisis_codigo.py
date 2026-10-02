@@ -7,7 +7,7 @@ from sklearn.ensemble import RandomForestRegressor
 import os
 
 # --- Configuration ---
-CSV_FILEPATH = 'fractional_results.csv' # Updated to your CSV file
+CSV_FILEPATH = '../fractional_results.csv' # Updated to your CSV file
 RESULTS_DIR = 'results' # Directory to save plots
 os.makedirs(RESULTS_DIR, exist_ok=True) # Ensure results directory exists
 

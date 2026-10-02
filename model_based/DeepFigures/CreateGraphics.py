@@ -8,7 +8,7 @@ import os
 os.makedirs('analysis_plots', exist_ok=True)
 
 # Load the data
-df = pd.read_csv('fractional_results.csv')
+df = pd.read_csv('../fractional_results.csv')
 
 # Basic data cleaning
 df['finish_percent'] = df['finish_percent'] * 100  # Convert to percentage

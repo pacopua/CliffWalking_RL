@@ -1,0 +1,11 @@
+__pycache__/
+*.py[cod]
+*.nbi
+*.nbc
+.ipynb_checkpoints/
+.venv/
+venv/
+.vscode/
+.idea/
+.claude/
+.DS_Store

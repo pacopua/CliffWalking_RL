@@ -15,21 +15,23 @@ Además de los prerrequisitos generales del proyecto, asegúrese de tener:
     pip install numpy gymnasium numba pandas matplotlib seaborn scikit-learn
     ```
 
-### 3.3. Estructura de Directorios Sugerida
-Use code with caution.
-Markdown
+### 3.3. Estructura de Directorios
+
+```
 .
-├── genParamsQ.py # Script para generar combinaciones de HPs para Q-Learning
-├── qlearningstudy.py # Script principal para ejecutar experimentos de Q-Learning
-├── analysisPipeline.py # Script para analizar resultados de Q-Learning
+├── qlearning.py           # Agente Q-Learning básico (una sola configuración)
+├── genParamsQ.py          # Genera combinaciones de HPs para Q-Learning
+├── qlearningstudy.py      # Ejecuta los experimentos (paralelo, Numba)
+├── analysisPipeline.py    # Analiza los resultados y genera los gráficos
 ├── results/
-│ ├── qlearning_random_trials.json # HPs generados para Q-Learning (ejemplo)
-│ ├── qlearning_results.csv # Resultados de experimentos Q-Learning (ejemplo)
-│ ├── qlearning_plots/ # Subdirectorio para gráficos de Q-Learning
-│ │ ├── plot_*.png
-│ └── qlearning_run_log.txt # Log de ejecución (opcional)
+│   ├── random_search_trials.json              # HPs muestreados
+│   ├── training_results_with_evaluation.csv   # Resultados de los experimentos
+│   ├── best.csv / best.json                   # Mejores configuraciones
+│   └── plot_*.png                             # Gráficos del análisis
 └── README.md
-*(Ajuste los nombres de archivo y directorios en los scripts si difieren de esta estructura).*
+```
+
+*(`genParamsQ.py` escribe `random_search_unique_trials.json` en el directorio actual; muévalo a `results/random_search_trials.json`, que es la ruta que lee `qlearningstudy.py`).*
 
 ### 3.4. Pasos para la Reproducción
 
@@ -40,7 +42,7 @@ El script `genParamsQ.py` crea un archivo JSON con combinaciones de hiperparáme
 1.  **Configurar `genParamsQ.py`:**
     *   Defina los rangos y valores para cada hiperparámetro en `param_distributions`.
     *   Establezca `num_desired_unique_trials` (e.g., 500).
-    *   Asegúrese de que `out_file` (e.g., `results/qlearning_random_trials.json`) sea correcto.
+    *   Asegúrese de que `out_file` (e.g., `results/random_search_trials.json`) sea correcto.
 2.  **Ejecutar:**
     ```bash
     python genParamsQ.py
@@ -53,7 +55,7 @@ El script `qlearningstudy.py` utiliza el JSON generado para entrenar y evaluar e
 1.  **Configurar `qlearningstudy.py`:**
     *   Verifique que carga el archivo JSON correcto (generado en el Paso 1).
     *   Ajuste `samples_per_param_set` (e.g., 5), `num_eval_episodes_after_training` (e.g., 100).
-    *   Confirme el nombre del archivo CSV de salida (e.g., `results/qlearning_results.csv`).
+    *   Confirme el nombre del archivo CSV de salida (e.g., `results/training_results_with_evaluation.csv`).
 2.  **Ejecutar (se recomienda redirigir la salida para ejecuciones largas):**
     ```bash
     python qlearningstudy.py > results/qlearning_run_log.txt 2>&1
@@ -65,7 +67,7 @@ El script `analysisPipeline.py` procesa el CSV de resultados para generar gráfi
 
 1.  **Configurar `analysisPipeline.py`:**
     *   Establezca `CSV_FILEPATH` al archivo CSV generado en el Paso 2.
-    *   Defina `RESULTS_DIR` para los gráficos (e.g., `results/qlearning_plots/`).
+    *   Defina `RESULTS_DIR` para los gráficos (e.g., `results/`).
     *   Elija `TARGET_METRIC_FOR_ANALYSIS` (e.g., `'eval_mean_steps_if_successful'`).
     *   Ajuste `MIN_SUCCESS_RATE_FOR_STEPS_ANALYSIS` si es necesario.
 2.  **Ejecutar:**
@@ -75,9 +77,9 @@ El script `analysisPipeline.py` procesa el CSV de resultados para generar gráfi
 
 ### 3.5. Salidas Esperadas (para Q-Learning)
 
-*   Un archivo JSON (`results/qlearning_random_trials.json`) con las configuraciones de hiperparámetros.
-*   Un archivo CSV (`results/qlearning_results.csv`) con los resultados agregados de los experimentos.
-*   Una serie de gráficos PNG en `results/qlearning_plots/` mostrando:
+*   Un archivo JSON (`results/random_search_trials.json`) con las configuraciones de hiperparámetros.
+*   Un archivo CSV (`results/training_results_with_evaluation.csv`) con los resultados agregados de los experimentos.
+*   Una serie de gráficos PNG en `results/` mostrando:
     *   Efecto de hiperparámetros individuales sobre la métrica de rendimiento.
     *   Impacto de las estructuras de recompensa.
     *   Importancia de características según Random Forest.

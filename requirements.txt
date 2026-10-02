@@ -1,0 +1,8 @@
+gymnasium>=0.28
+numpy
+pandas
+matplotlib
+seaborn
+scikit-learn
+scipy
+numba
